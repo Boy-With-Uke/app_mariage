@@ -1,0 +1,371 @@
+{% extends 'base.html.twig'%}
+{% block navbar %}
+
+<header>
+	<!-- Intro settings -->
+	<style>
+	  /* Default height for small devices */
+	  #intro-example {
+		height: 800px;
+		background-size: cover;
+	  }
+  
+	  /* Height for devices larger than 992px */
+	  @media (min-width: 992px) {
+		#intro-example {
+		  height: 800px;
+		}
+	  }
+	</style>
+  
+	<!-- Navbar -->
+<div class="navbar-fixed">
+	<nav class="navbar navbar-expand-lg navbar_app ">
+	  <div class="container-fluid">
+		<button
+		  data-mdb-collapse-init
+		  class="navbar-toggler"
+		  type="button"
+		  data-mdb-target="#navbarExample01"
+		  aria-controls="navbarExample01"
+		  aria-expanded="false"
+		  aria-label="Toggle navigation"
+		>
+		  <i class="fas fa-bars"></i>
+		</button>
+		<div class="collapse navbar-collapse" id="navbar_app navbarExample01">
+		  <!-- Left links -->
+		  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<li class="nav-item">
+			  <a class="nav-link _app_mariage app_mariage_nom" href="#">{{nomHomme | first}} & {{nomFemme | first}}</a>
+			</li>			
+		  </ul>
+		  <!-- Left links -->
+		</div>
+		<!-- Collapsible wrapper -->
+		<div class="d-flex align-items-center">
+			
+			<!-- Icon -->
+		
+			<a class="dropdown-item _app_mariage connexion_app_mariage liste_invites" ><svg data-bbox="0 0 50 50" class="icon_svg_app_mariage" data-type="shape" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><g><path d="M25 48.077c-5.924 0-11.31-2.252-15.396-5.921 2.254-5.362 7.492-8.267 15.373-8.267 7.889 0 13.139 3.044 15.408 8.418-4.084 3.659-9.471 5.77-15.385 5.77m.278-35.3c4.927 0 8.611 3.812 8.611 8.878 0 5.21-3.875 9.456-8.611 9.456s-8.611-4.246-8.611-9.456c0-5.066 3.684-8.878 8.611-8.878M25 0C11.193 0 0 11.193 0 25c0 .915.056 1.816.152 2.705.032.295.091.581.133.873.085.589.173 1.176.298 1.751.073.338.169.665.256.997.135.515.273 1.027.439 1.529.114.342.243.675.37 1.01.18.476.369.945.577 1.406.149.331.308.657.472.98.225.446.463.883.714 1.313.182.312.365.619.56.922.272.423.56.832.856 1.237.207.284.41.568.629.841.325.408.671.796 1.02 1.182.22.244.432.494.662.728.405.415.833.801 1.265 1.186.173.154.329.325.507.475l.004-.011A24.886 24.886 0 0 0 25 50a24.881 24.881 0 0 0 16.069-5.861.126.126 0 0 1 .003.01c.172-.144.324-.309.49-.458.442-.392.88-.787 1.293-1.209.228-.232.437-.479.655-.72.352-.389.701-.78 1.028-1.191.218-.272.421-.556.627-.838.297-.405.587-.816.859-1.24a26.104 26.104 0 0 0 1.748-3.216c.208-.461.398-.93.579-1.406.127-.336.256-.669.369-1.012.167-.502.305-1.014.44-1.53.087-.332.183-.659.256-.996.126-.576.214-1.164.299-1.754.042-.292.101-.577.133-.872.095-.89.152-1.791.152-2.707C50 11.193 38.807 0 25 0"></path></g></svg>invité(e)</a>				 
+			<a class="dropdown-item _app_mariage repondre_app_mariage prestataire" >prestataire</a>
+		
+			
+
+			{# <svg class="icons_svg_app_mariage" preserveAspectRatio="xMidYMid meet" data-bbox="20 38.5 160 123" viewBox="20 38.5 160 123" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="img" aria-label="Ouvrir navigation du site">
+				<g>
+					<path d="M180 38.5v6.254H20V38.5h160z"></path>
+					<path d="M180 96.873v6.254H20v-6.254h160z"></path>
+					<path d="M180 155.246v6.254H20v-6.254h160z"></path>
+				</g>
+			</svg> #}
+		</div>
+		
+	  </div>
+	</nav>
+	<div class="settings">
+		<div class="dropdown app_active_settings">				
+		<img id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle img_svg_image" src="{{asset('icons/settings-svgrepo.svg')}}">
+			<div class="dropdown-menu app_active_settings_items" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item link_app" href="/activity_info/{{id}}">Information personnelle </a>
+				{% if id_presta !="" %}
+				<a class="dropdown-item link_app" href="/prestataire/budget/{{id_presta}}">Mon prestataire</a>
+				{% else %}
+				<a class="dropdown-item link_app" href="#prestataire">Choisir l'un de prestataire plus suivis </a>
+				{% endif %}
+				<a class="dropdown-item link_app" href="/chargerInvites/{{id}}">Charger les listes des invité(e)s</a>
+				<a class="dropdown-item link_app" href="/VoirPrestataire">Tous les prestataires</a>
+				<a class="dropdown-item link_app" href="/deconnexion">Deconnexion</a>
+			  </div>
+		</div>
+	</div>
+	<!-- Navbar -->
+</div>
+	<!-- Background image -->
+	<div
+	  id="intro-example"
+	  class="p-5 text-center bg-image"
+	  {% if photo_principal != "" %} style="background-image: url('/uploads/images/{{photo_principal}}');"{% else %} style="background-image: url('/uploads/cache/principale.jpg');" {% endif %}
+	>
+	  
+		<div class="d-flex justify-content-center align-items-center h-100">
+		  <div class="text-white app_mariage_wh">
+			
+			<h1 class="mb-4 jrs-j">{% if jourJ == 0 %}<span class="text-success" >c'est la date de cérémonie</span>{%else%}J<span class="text-white">{{jourJ}}</span>{%endif%}</h1>			
+			
+			<h1 class="mb-3 titre_app_nom">{% if nomHomme !="" %}{{nomHomme}}{% else %} Anonyme {% endif %}<br> et {% if nomFemme !="" %}{{nomFemme}}{% else %} Anonyme {% endif %}</h1>
+
+			<a
+			  data-mdb-ripple-init
+			  class="btn btn-outline-light btn-lg lieux_de_ceremonie_app"			  
+			  
+			>{{dateCeremonie}} | {{lieuxCeremonie}}</a
+			>
+		  </div>
+		</div>
+	  </div>
+	
+	<!-- Background image -->
+  </header>
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset('./styles/liste.css')}}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+
+{% endblock %}
+{% block javascripts %}
+	<script src="jquery.add-input-area.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="{{asset('./js/active.js')}}">
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+
+{% endblock %}
+
+{% block body %}
+{% if budgetInitial == "" %}
+<section class="popup">	
+  <div class="popup__content">
+	<button type="button" class="close" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	  </button>
+    <div>
+      <span></span>
+      <span></span>
+    </div id="pop_up">
+		<h3 class="text-danger">Vous devez remplisser votre Budget avant de commencer...!</h3>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+			  <span class="input-group-text" id="basic-addon1">Votre budget : </span>
+			</div>
+			<input type="hidden" id="id_activite" value="{{id}}">
+			<input type="text" id="budget_initial" class="form-control montant" placeholder="1,000,000" aria-label="budget" aria-describedby="basic-addon1" value="{{budgetInitial}}">
+			<div class="input-group-append">
+				<span class="input-group-text" id="basic-addon2">Ariary</span>
+			  </div>
+		  </div>
+	
+		  <h4 class="text-success">Budget minimum : 10.000.000 Ar</h4>
+
+</section>
+
+<script>
+	affiche()
+	function affiche(){
+		$(".popup").fadeIn(500);
+	}	
+	$(".close").click(function(){
+		$(".popup").fadeOut(500);
+	});
+
+</script>	
+
+{% endif %}
+
+<div class="week-app-mariage">
+	<div class="row">
+		<div class="week-date col-md-4">
+				<h1>Le week-end du mariage</h1>
+				<h5>{{dateCeremonie}}</h5>
+		</div>
+		{# <button type="button"
+  class="btn btn-gotop d-inline-flex align-items-center justify-content-center"
+  data-action="gotop"> <i class="fas fa-chevron-up"></i>
+		</button> #}
+		<div class="col-md-4 app-alliance">
+			<svg preserveAspectRatio="xMidYMid meet" class="alliance_app_img text-white"data-bbox="19.504 28.491 160.807 142.464" viewBox="19.504 28.491 160.807 142.464" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-l2iw4ah5 svg [data-color="1"] {fill: #FCF8EB;}</style></defs>
+				<g>
+					<path d="M138.832 83.334c-4.06-2.091-13.055-5.453-19.755-6.188-.107-3.349-.924-6.301-2.475-8.826-5.021-8.174-14.651-12.823-27.118-13.092-12.376-.272-26.111 3.826-38.646 11.525-14.433 8.865-26.928 25.419-30.386 40.256-1.765 7.573-1.056 14.183 2.05 19.114 5.207 8.267 16.958 12.023 29.759 12.023 10.896 0 22.551-2.726 31.577-7.706 7.028 7.831 16.686 14.471 27.83 19.039 10.079 4.132 20.573 6.225 30.188 6.225 7.733-.001 14.898-1.354 20.816-4.092 6.93-3.204 11.654-8.15 13.662-14.304 9.681-29.669-25.833-47.962-37.502-53.974zm-.458.889c7.644 3.938 25.681 13.232 34.111 27.519-.001.029-.009.057-.005.087 1.225 8.446-.533 14.494-5.208 18.004-12.249-26.846-50.083-35.203-52.257-35.661 2.663-6.042 4.033-11.398 4.083-16.017 6.557.749 15.308 4.025 19.276 6.068zm-23.827 11.009c.023-.049.042-.096.064-.145.035.016.068.037.107.045.393.078 39.422 8.104 51.698 35.233.007.015.023.022.031.036-13.814 8.898-45.284-3.988-46.086-4.361a.47.47 0 0 0-.069-.039c-.17-.081-9.414-4.539-18.007-11.188 2.586-3.094 8.275-10.91 12.262-19.581zm1.202-26.389c8.237 13.41-7.815 37.686-14.254 45.355-5.358-4.254-10.338-9.345-12.548-14.739.962-.739 19.951-15.529 18.253-29.347-.658-5.356-4.378-9.808-11.054-13.265 8.862 1.5 15.7 5.641 19.603 11.996zM72.527 107.86a.515.515 0 0 0-.185.063c-.242.143-24.339 14.123-38.967 7.777a15.831 15.831 0 0 1-3.293-1.941c.418-.904 5.958-12.57 17.662-23.034C58.867 80.78 78.002 69.93 106.05 74.547a19.417 19.417 0 0 1-.739 2.846.497.497 0 0 0-.185-.019c-16.053 1.54-26.768 7.791-30.985 18.079-1.591 3.876-2.118 8.065-1.614 12.407zm32.413-29.458c-3.826 9.754-14.53 18.61-16.352 20.066-.407-1.187-.693-2.385-.796-3.593-.469-5.485 2.559-10.578 8.994-15.139 2.531-.599 5.252-1.045 8.154-1.334zM51.361 67.605c12.374-7.6 25.916-11.636 38.101-11.378 1.225.026 2.413.107 3.58.219a.481.481 0 0 0 .128.089c7.958 3.454 12.345 8.062 13.038 13.697.135 1.1.115 2.211-.013 3.325-28.446-4.677-47.859 6.346-59.147 16.448-11.195 10.019-16.818 21.13-17.761 23.094-2.978-2.589-5.057-6.338-6.164-11.249-.007-.032-.026-.058-.039-.087 4.817-13.037 15.811-26.501 28.277-34.158zM23.348 125.59c-2.96-4.7-3.625-11.047-1.922-18.354a44.898 44.898 0 0 1 1.076-3.749c1.775 6.469 5.293 10.884 10.475 13.131 2.853 1.236 6.033 1.726 9.279 1.726 5.758 0 11.723-1.539 16.43-3.171 7.237-2.509 12.991-5.718 13.993-6.289.806 5.288 3.108 10.779 6.885 16.189a55.877 55.877 0 0 0 3.601 4.593c-21.152 11.573-51.224 9.568-59.817-4.076zm152.035 11.408c-1.92 5.883-6.46 10.622-13.131 13.707-13.031 6.025-32.269 5.202-50.205-2.151-13.436-5.508-24.68-14.05-31.663-24.054-6.936-9.937-8.826-20.118-5.32-28.668 3.028-7.386 9.587-12.616 19.199-15.429-5.401 4.405-7.918 9.293-7.468 14.559.602 7.042 6.365 14.565 17.13 22.359 7.964 5.767 15.86 9.545 15.938 9.582l.024-.05c2.371 1.424 19.376 7.673 33.358 7.672 2.938 0 5.746-.276 8.253-.932 9.032-2.359 13.139-8.934 12.239-19.548 3.308 6.657 4.464 14.319 1.646 22.953z" fill="#3C3C3B" data-color="1"></path>
+					<path d="M149.245 52.563h.954l2.769-8.79 8.79-2.769v-.954l-8.79-2.769-2.769-8.79h-.954l-2.769 8.79-8.791 2.769v.954l8.791 2.769 2.769 8.79zm-2.22-14.406.327-.327 2.37-7.524 2.371 7.524.327.327 7.524 2.371-7.524 2.37-.327.327-2.371 7.524-2.37-7.524-.327-.327-7.525-2.37 7.525-2.371z" fill="#3C3C3B" data-color="1"></path>
+					<path d="m175.93 72.298-1.38-4.382h-.954l-1.379 4.382-4.381 1.379v.954l4.381 1.38 1.379 4.381h.954l1.38-4.381 4.381-1.38v-.954l-4.381-1.379zm-.549 2.838-.327.327-.981 3.116-.981-3.116-.327-.327-3.116-.981 3.116-.981.327-.327.981-3.116.981 3.116.327.327 3.116.981-3.116.981z" fill="#3C3C3B" data-color="1"></path>
+					<path d="M62.94 158.478h-.954l-1.38 4.382-4.381 1.38v.953l4.381 1.38 1.38 4.382h.954l1.38-4.382 4.381-1.38v-.953l-4.381-1.38-1.38-4.382zm.831 7.219-.327.326-.981 3.116-.981-3.116-.327-.326-3.115-.981 3.115-.981.327-.326.981-3.116.981 3.116.327.326 3.115.981-3.115.981z" fill="#3C3C3B" data-color="1"></path>
+				</g>
+			</svg>
+		</div>
+		<div class="col-md-4 week_comment">
+			<h4 class="h_titre">
+				Nous avons le plaisir de vous inviter à notre mariage.
+			</h4>
+			<h6 class="l_titre">
+				Paragraphe. Cliquez ici pour le modifier et ajouter votre propre texte. C'est l'espace idéal pour raconter une histoire et vous présenter à vos visiteurs.
+			</h6>
+		</div>
+	</div>
+</div>
+
+<div class="ceremonie-lieu">
+	<div class="row">
+		<div class="col-md-6 cardApp">
+			<div class="cardApp_ceremonie">				
+				<img src="/uploads/images/{{photo_ceremonie}}" alt="">
+				<h1>Ceremonie</h1>
+				<p>
+					contenu
+				</p>
+			</div>
+		</div>
+		<div class="col-md-6 cardApp">
+			<div class="cardApp_reception">				
+				<img src="/uploads/images/{{photo_reception}}" alt="">				
+				<h1>Reception</h1>
+				<p>
+					contenu
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="prestataire_mariage_app" id="prestataire">
+	<h1 class="liste_prestataire_plus_suivre">Les 5 prestataires plus populaires <a href="{{ path('prestataireComplet')}}">voir plus</a></h1>
+	<div class="row">
+		{% for  presta in pres %}
+		<div class="col-md-4 card_prestataire_mariage_app mt-4">
+			<div class="card card_app_mariage" >
+				<img class="card-img-top img_card_app" src="/uploads/images/{{presta.photo}}" alt="Card image">
+				<div class="card-body">
+				  <h4 class="card-title">{{presta.nom}}</h4>
+				  <p class="card-text">{{presta.description}}</p>
+				  <h1 class="price_h1">{{presta.budget | number_format }} Ar</h1>
+				  <a href="{{presta.id}}" class="btn btn-primary btn_commande_app">commander</a>
+				</div>
+			  </div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+<div class="invites_mariage_app" id="liste_invites">
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">Nom et Prenom</th>
+				<th scope="col">Numero telephone</th>
+				<th scope="col">Status</th>
+				<th scope="col">Observation</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for liste_invite in liste_invites %}
+				<tr>
+					<td>{{liste_invite.0}}</td>
+					<td>{{liste_invite.1}}</td>
+					<td></td>
+
+					<td>
+						<a href="#" class="btn btn-success">Appeler/sms</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+
+<div class="footer_wedding">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="hf_app_mariage">
+			<h1 class="mariage_hf">{{nomHomme | first}} & {{nomFemme | first}}</h1>		
+		</div>
+		</div>
+		
+		<div class="col-md-4">
+			<h1 class="h1_contact">Nous appeler </h1>
+			<h5>{{nomHomme}} : {{phoneH}}</h5>
+			<h5>{{nomFemme}} : {{phoneF}}</h5>
+		</div>
+		<div class="col-md-4">
+			<h1 class="menu_app">Menu</h1>
+			<ul class="ul_menu_app">
+				<a href=""  class="ancre_app_menu" ><li>Listes des invité(e)s  </li></a>
+				<a href="" class="ancre_app_menu"><li>Mariage</li></a>
+				<a href="" class="ancre_app_menu"><li>Ceremonie</li></a>
+				<a href="" class="ancre_app_menu"><li>Prestataire</li></a>
+			</ul>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+	.navbarClass{
+		position:fixed;
+		width: 100%;
+		background-color: aquamarine;
+		z-index: 1;
+	}
+
+	.navbar_appClass {
+  		background-color: rgb(26,21,0) !important;  
+}
+.app_active_settingsClass {
+  		background-color: rgb(26,21,0) !important;  
+}
+
+.app_image_svg{
+background-color: aquamarine;
+  color: bisque;
+  border-radius: 50px;
+  border: 2px solid deeppink;
+}
+
+</style>
+<script type="text/javascript">
+
+const listeMariage  = document.querySelector('.liste_invites');
+const prestataire = document.querySelector('.prestataire')
+const app = document.querySelector('.prestataire_mariage_app')
+listeMariage.addEventListener('click', function(){	
+	window.scrollTo(0,3000)
+	
+});
+
+prestataire.addEventListener('click', function(){	
+	window.scrollTo(0,2000)
+})
+
+function montant(){       
+		var id = $("#id_activite").val()
+        let data = {          
+            montant: $('.montant').val()                 
+            }			
+			$.ajax({
+            url: "/montant/"+id,
+            method: "PUT",
+            data: data,
+            success: function (response){alert('L\'enregistrement a été effectué avec succès...')}
+          })
+
+
+}
+
+$(".montant").change(function(){
+		montant()
+})
+
+
+
+function btnReveal (){			
+		if(window.scrollY > 965){
+			$('.navbar-fixed').addClass('navbarClass')
+			$('.navbar_app').addClass('navbar_appClass')
+			$('.settings').addClass('app_active_settingsClass')
+			$('.img_svg_image').addClass('app_image_svg')
+		}else{
+			$('.navbar-fixed').removeClass('navbarClass')
+			$('.navbar_app').removeClass('navbar_appClass')
+			$('.settings').removeClass('app_active_settingsClass')
+			$('.img_svg_image').removeClass('app_image_svg')
+		
+		}
+	}
+
+window.addEventListener('scroll', btnReveal);
+
+</script>
+{% endblock %}
