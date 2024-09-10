@@ -1,108 +1,122 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block navbar %}{% endblock %} {% block
+stylesheets %}
+{{ encore_entry_link_tags("app") }}
+<link rel="stylesheet" href="{{ asset('./styles/personal.css') }}" />
+{% endblock %} {% block body %}
 
-{% block navbar %}{% endblock %}
-
-{% block stylesheets %}
-			{{ encore_entry_link_tags('app') }}
-			<link rel="stylesheet" href="{{asset('./styles/background.css')}}">
-		{% endblock %}
-
-{% block body %}
-
-    <div class="content">
-
-        <div class="container">
-        <div class="bubbles">
-            <span style="--i:11;"></span>
-            <span style="--i:12;"></span>
-            <span style="--i:24;"></span>
-            <span style="--i:10;"></span>
-            <span style="--i:14;"></span>
-            <span style="--i:23;"></span>
-            <span style="--i:18;"></span>
-            <span style="--i:16;"></span>
-            <span style="--i:19;"></span>
-            <span style="--i:18;"></span>
-            <span style="--i:25;"></span>
-            <span style="--i:26;"></span>
-            <span style="--i:22;"></span>
-            <span style="--i:21;"></span>
-            <span style="--i:15;"></span>
-            <span style="--i:13;"></span>
-            <span style="--i:26;"></span>
-            <span style="--i:28;"></span>
-            <span style="--i:11;"></span>
-            <span style="--i:12;"></span>
-            <span style="--i:24;"></span>
-            <span style="--i:10;"></span>
-            <span style="--i:14;"></span>
-            <span style="--i:23;"></span>
-            <span style="--i:18;"></span>
-            <span style="--i:16;"></span>
-            <span style="--i:19;"></span>
-            <span style="--i:18;"></span>
-            <span style="--i:25;"></span>
-            <span style="--i:26;"></span>
-            <span style="--i:22;"></span>
-            <span style="--i:21;"></span>
-            <span style="--i:15;"></span>
-            <span style="--i:13;"></span>
-            <span style="--i:26;"></span>
-            <span style="--i:28;"></span>
-            <span style="--i:11;"></span>
-            <span style="--i:12;"></span>
-            <span style="--i:24;"></span>
-            <span style="--i:10;"></span>
-            <span style="--i:14;"></span>
-            <span style="--i:23;"></span>
-            <span style="--i:18;"></span>
-            <span style="--i:16;"></span>
-            <span style="--i:19;"></span>
-            <span style="--i:18;"></span>
-            <span style="--i:25;"></span>
-            <span style="--i:26;"></span>
-            <span style="--i:22;"></span>
-            <span style="--i:21;"></span>
-            <span style="--i:15;"></span>
-            <span style="--i:13;"></span>
-            <span style="--i:26;"></span>
-            <span style="--i:28;"></span>
-            
-        </div>
-
-            <div class="row form-container p-3 transparent rowContainer" style="margin:150px auto; background-color: white; border-radius: 5px">
-                <div class="col-md-6 p-3 transparent" >
-                    <form class="toto" action="{{ path('app_login') }}" method="post">
-                        <div class="form-group login-bloc transparent">
-                            <h2 class="text-center pt-5 pb-5">
-                                <span>
-                                    <i class="fa-regular fa-user"></i>
-                                </span>
-                                Bienvenue</h2>
-                            <input type="text" class="form-control" placeholder="Adresse mail" required name="_username" value="">
-                            <br>
-                            <input type="password" class="form-control" placeholder="Mot de passe" required name="_password">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success">
-                                Connexion
-                            </button>
-                            <button type="submit" class="btn btn-danger">
-                                Annuler
-                            </button>
-                            <a href="{{ path ('app_mdp_oublie')}}">Mot de passe oublié
-                            </a>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-6 p-3 d-flex justify-content-center align-items-center">
-                    <div class="svg-box">
-                        <img src="{{asset('icons/couple-54.svg')}}" alt="form-svg">
-                    </div>
-                </div>
-            </div>
-        </div>
-
+<div class="content">
+  <div class="container">
+    <div class="bubbles">
+      <span style="--i: 11"></span>
+      <span style="--i: 12"></span>
+      <span style="--i: 24"></span>
+      <span style="--i: 10"></span>
+      <span style="--i: 14"></span>
+      <span style="--i: 23"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 16"></span>
+      <span style="--i: 19"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 25"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 22"></span>
+      <span style="--i: 21"></span>
+      <span style="--i: 15"></span>
+      <span style="--i: 13"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 28"></span>
+      <span style="--i: 11"></span>
+      <span style="--i: 12"></span>
+      <span style="--i: 24"></span>
+      <span style="--i: 10"></span>
+      <span style="--i: 14"></span>
+      <span style="--i: 23"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 16"></span>
+      <span style="--i: 19"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 25"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 22"></span>
+      <span style="--i: 21"></span>
+      <span style="--i: 15"></span>
+      <span style="--i: 13"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 28"></span>
+      <span style="--i: 11"></span>
+      <span style="--i: 12"></span>
+      <span style="--i: 24"></span>
+      <span style="--i: 10"></span>
+      <span style="--i: 14"></span>
+      <span style="--i: 23"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 16"></span>
+      <span style="--i: 19"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 25"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 22"></span>
+      <span style="--i: 21"></span>
+      <span style="--i: 15"></span>
+      <span style="--i: 13"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 28"></span>
     </div>
+
+    <div
+      class="row form-container p-3 transparent rowContainer"
+      style="margin: 150px auto; background-color: white; border-radius: 5px"
+    >
+      <div class="col-md-6 p-3 transparent">
+        <form class="toto" action="{{ path('app_login') }}" method="post">
+          <div class="form-group login-bloc">
+            <div class="title pb-5">
+              <span style="border: none">
+                <img
+                  style="width: 90px; height: 90px"
+                  src="{{ asset('icons/couple-pink.svg') }}"
+                  alt="form-svg"
+                />
+              </span>
+              <h2 class="pt-2">Bienvenue</h2>
+            </div>
+            <input
+              type="text"
+              class="form-control custom-input"
+              placeholder="Adresse mail"
+              required
+              name="_username"
+              value=""
+            />
+            <br />
+            <input
+              type="password"
+              class="form-control custom-input"
+              placeholder="Mot de passe"
+              required
+              name="_password"
+            />
+          </div>
+          <div class="form-group" id="custom-row">
+            <button type="submit" class="custom-button">Connexion</button>
+            <button type="submit" class="custom-button-outlined">
+              Annuler
+            </button>
+          </div>
+          <div class="row d-flex justify-content-center align-items-center">
+            <a href="{{ path('app_mdp_oublie') }}">Mot de passe oublié ?</a>
+          </div>
+        </form>
+      </div>
+      <div
+        class="col-md-6 p-3 d-flex justify-content-center align-items-center"
+      >
+        <div class="svg-box">
+          <img id="side-svg"src="{{ asset('icons/wedding-svgrepo-com.svg') }}" alt="form-svg" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

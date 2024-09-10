@@ -1,33 +1,132 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block navbar %}{% endblock %} {% block
+stylesheets %}
+{{ encore_entry_link_tags("app") }}
+<link rel="stylesheet" href="{{ asset('./styles/personal.css') }}" />
+{% endblock %} {% block javascripts %}
+{{ encore_entry_script_tags("app") }}
+<script src="{{ asset('./js/error.js') }}"></script>
+{% endblock %} {% block body %}
 
-{% block navbar %}
-
-{% endblock %}
-
-{% block body %}
-
-<div class="container">
-    <div class="row form-container p-3" style="margin:150px auto">
-        <div class="col-md-6 p-3">
-            
-            {{ form_start (form, {'attr': {'class': 'form-group sing-up-bloc', 'action': path ('app_inscr')}}) }}
-            
-                <h2 class="text-center pb-5 pt-5"><span><i class="fa-regular fa-user"></i></span>Inscrivez-vous</h2>
-                {{ form_row (form.username, {'attr': {'class': 'form-control', 'placeholder': 'Nom d\'utilisateur'}}) }} <br>                
-                {{ form_row (form.email,{'attr': {'class': 'form-control', 'placeholder': 'Adresse Email'}}) }} <br>                                            
-                {{ form_row (form.password.first, {'attr': {'class': 'form-control', 'placeholder': 'Mot de passe'}}) }} <br>                 
-                {{ form_row (form.password.second, {'attr': {'class': 'form-control', 'placeholder': 'Confirmation du mot mot de passe'}}) }} <br>                 
-                <button type="submit" class="btn btn-success">Valider</button>
-                <a href=" {{path ('app_inscr')}}" class="btn-2">Annuler</a>
-            {{ form_end (form) }}
-        </div>
-        <div class="col-md-6 p-3 d-flex justify-content-center align-items-center">
-            <div class="svg-box">
-                <img src="{{ asset('icons/authentication-34.svg') }}" alt="form-svg">
-            </div>
-        </div>
+<div class="content">
+  <div class="container">
+    <div class="bubbles">
+      <span style="--i: 11"></span>
+      <span style="--i: 12"></span>
+      <span style="--i: 24"></span>
+      <span style="--i: 10"></span>
+      <span style="--i: 14"></span>
+      <span style="--i: 23"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 16"></span>
+      <span style="--i: 19"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 25"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 22"></span>
+      <span style="--i: 21"></span>
+      <span style="--i: 15"></span>
+      <span style="--i: 13"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 28"></span>
+      <span style="--i: 11"></span>
+      <span style="--i: 12"></span>
+      <span style="--i: 24"></span>
+      <span style="--i: 10"></span>
+      <span style="--i: 14"></span>
+      <span style="--i: 23"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 16"></span>
+      <span style="--i: 19"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 25"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 22"></span>
+      <span style="--i: 21"></span>
+      <span style="--i: 15"></span>
+      <span style="--i: 13"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 28"></span>
+      <span style="--i: 11"></span>
+      <span style="--i: 12"></span>
+      <span style="--i: 24"></span>
+      <span style="--i: 10"></span>
+      <span style="--i: 14"></span>
+      <span style="--i: 23"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 16"></span>
+      <span style="--i: 19"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 25"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 22"></span>
+      <span style="--i: 21"></span>
+      <span style="--i: 15"></span>
+      <span style="--i: 13"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 28"></span>
     </div>
+    <div
+      class="row form-container p-3 rowContainer"
+      style="margin: 150px auto; background-color: white"
+    >
+      <div class="col-md-6 p-3">
+        {{ form_start(form, {'attr': {'class': 'form-group sing-up-bloc', 'action': path('app_inscr')
+
+
+
+        }}) }}
+        <div class="title pb-5">
+          <span style="border: none">
+            <img
+              style="width: 90px; height: 90px; margin-top: 50px"
+              src="{{ asset('icons/wedding-rings.svg') }}"
+              alt="form-svg"
+            />
+          </span>
+          <h2 class="pt-2">Inscrivez-vous</h2>
+        </div>
+
+        {# Username field #}
+        {{ form_row(form.username, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Nom d\'utilisateur'
+
+        }}) }}
+        <br />
+
+        {# Email field #}
+        {{ form_row(form.email, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Adresse Email'
+
+        }}) }}
+        <br />
+
+        {# Password fields #}
+        {{ form_row(form.password.first, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Mot de passe'
+
+        }}) }}
+        <br />
+
+        {{ form_row(form.password.second, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Confirmation du mot de passe'
+
+        }}) }}
+        <br />
+
+        <div class="form-group" id="custom-row">
+          <button type="submit" class="custom-button">Valider</button>
+          <a href="{{ path('app_inscr') }}" class="custom-button-outlined"
+            >Annuler</a
+          >
+        </div>
+        {{ form_end(form) }}
+      </div>
+
+      <div
+        class="col-md-6 p-3 d-flex justify-content-center align-items-center"
+      >
+        <div class="svg-box">
+          <img src="{{ asset('icons/wedding-couple.svg') }}" alt="form-svg" />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
-

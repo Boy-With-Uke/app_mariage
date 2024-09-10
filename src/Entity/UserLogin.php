@@ -37,7 +37,7 @@ class UserLogin implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $resetToken = null;
 
-    #[ORM\Column(length: 255, nullable:true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private array $roles = []; // Initialiser par défaut avec un tableau vide
 
     /**
@@ -110,9 +110,7 @@ class UserLogin implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function eraseCredentials(): void
-    {
-    }
+    public function eraseCredentials(): void {}
 
     public function getSalt(): ?string
     {
