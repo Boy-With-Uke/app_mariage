@@ -8,6 +8,7 @@
 		</title>
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
+			
 		{% endblock %}
 
 		{% block javascripts %}
@@ -18,54 +19,85 @@
 
 	<body>
 		{% block navbar %}
-			<div class="container-fluid pt-3">
+			
+			<header class="site-navbar" role="banner">
 				<div class="container">
-					<div class="row">
-						<div class="head">
-							<a href="{{ path('home.plan_mariage') }}" class="logo">Logo</a>
-							<ul>
-								<li>
-									<a href="#">Accueil</a>
-								</li>
-								{% if is_granted('ROLE_ADMIN') %}
-									<li>
-										<a href="{{ path('admin') }}">Administration</a>
-									</li>
-								{% endif %}
+					<div class="row align-items-center">
 
-								{% if app.user %}
-									<li>
-										<a href="{{ path('app_compte_principale') }}">Mes projets</a>
-									</li>
-								{% endif %}
-								<li>
-									<a href="#">À propos</a>
-								</li>
-							</ul>
-							{% if not app.user %}
-								<div class="btn-bloc">
-									<a href="{{ path('app_login') }}" class="btn-1">Connexion</a>
-									<a href="{{ path('app_inscr') }}" class="btn-2">Inscription</a>
-								</div>
-							{% else %}
-								<div class="btn-bloc">
-									<span>
-										<i class="fa-regular fa-user"></i>
-										{{ app.user.username }}
-									</span>
-									<a href="{{ path('app_logout') }}" class="btn-2">Déconnexion</a>
-								</div>
-							{% endif %}
+						<div class="col-12 col-xl-2">
+							<h1 class="mb-0 site-logo">
+								<a href="index.html" class="brand">App Mariage</a>
+							</h1>
 						</div>
+						<div class="col-12 col-md-10 d-none d-xl-block">
+							<nav class="text-right site-navigation position-relative" role="navigation">
+
+								<ul class="mr-auto site-menu js-clone-nav d-none d-lg-block">
+									<li class="active">
+										<a href="#">
+											<span>Accueil</span>
+										</a>
+									</li>
+									<li class="has-children">
+										<a href="#">
+											<span>À propos</span>
+										</a>
+									</li>
+									<li>
+										<a href="listings.html">
+											<span>Galerie</span>
+										</a>
+									</li>
+									<li>
+										<a href="{{path('prestataireComplet')}}">
+											<span>
+												Besoin prestataire</span>
+										</a>
+
+									</li>
+
+									{% if is_granted('ROLE_ADMIN') %}
+										<li>
+											<a href="{{ path('admin_app') }}">
+												<span>Administration</span>
+											</a>
+										</li>
+									{% endif %}
+									{% if app.user %}
+										<li>
+											<a href="{{path('activite.app_mariage')}}">
+												<span>Mon projet</span>
+											</a>
+										</li>
+									{% endif %}
+									{% if app.user %}
+										<li>
+											<a href="{{ path('app_logout') }}" class="custom-button-outlined">Deconnexion</a>
+										</li>
+									{% else %}
+										<li>
+											<a href="{{ path('app_login') }}" class="custom-button-outlined btn-login">&nbsp Connexion &nbsp</a>
+										</li>
+										<li>
+											<a href="{{ path('app_inscr') }}" class="custom-button-outlined btn-signup">&nbsp Inscription &nbsp</a>
+										</li>
+									{% endif %}
+
+								</ul>
+							</nav>
+						</div>
+
+
+						<div class="py-3 mr-auto d-inline-block d-xl-none ml-md-0" style="position: relative; top: 3px;">
+							<a href="#" class="text-white site-menu-toggle js-menu-toggle">
+								<span class="icon-menu h3"></span>
+							</a>
+						</div>
+
 					</div>
+
 				</div>
 			</div>
-		{% endblock %}
-
-
-		{% block body %}
-			
-			{% block content %}{% endblock %}
-		{% endblock %}
-	</body>
-</html>
+		</body>
+	</html>
+</header>{% endblock %}{% block body %}{% endblock %}</body></html>
