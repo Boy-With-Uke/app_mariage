@@ -43,7 +43,7 @@ body {
   border: none;
   padding: 20px;
   border-radius: 10px;
-  background: #E30071;
+  background: #e30071;
   color: #fff;
 }
 
@@ -55,10 +55,11 @@ body {
   align-items: center;
   padding: 0px 90px;
 }
-.left-box .left-box-title {
+.left-box .left-box-title,
+.left-box-03 .left {
   font-family: "Grey Qo", cursive;
   font-size: 60px;
-  color: #E30071;
+  color: #e30071;
 }
 .bloc-img {
   padding: inherit;
@@ -82,7 +83,7 @@ body {
 .left-box-02 .left-box-title {
   font-family: "Grey Qo", cursive;
   font-size: 60px;
-  color: #E30071;
+  color: #e30071;
 }
 .bloc-img-02 {
   padding: inherit;
@@ -106,6 +107,7 @@ body {
 .left-box-03 .left-box-title {
   font-family: "Grey Qo", cursive;
   font-size: 60px;
+  color: #e30071;
 }
 .bloc-img-03 {
   padding: inherit;
@@ -149,12 +151,12 @@ body {
 .footer-bloc h2 {
   font-family: "Grey Qo", cursive;
   font-weight: 600;
-  color: #E30071;
+  color: #e30071;
 }
 .footer-bloc h4 {
   font-family: "Grey Qo", cursive;
   font-weight: 600;
-  color: #E30071;
+  color: #e30071;
 }
 .list-unstyled li {
   list-style: none;
