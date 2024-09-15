@@ -121,43 +121,6 @@ body {
   -moz-box-shadow: 98px -70px 0px 0px #f43b8d;
   box-shadow: 98px -70px 0px 0px #f43b8d;
 }
-.social-icons span {
-  background-color: #f43b8d;
-  padding: 8px 15px;
-  border-radius: 50%;
-  margin: 7px;
-}
-.social-icons span i {
-  font-size: 15px;
-}
-.social-icons .icon-02 {
-  background-color: #f43b8d;
-  padding: 8px 13px;
-  border-radius: 50%;
-}
-.social-icons .icon-03 {
-  background-color: #f43b8d;
-  padding: 8px 13px;
-  border-radius: 50%;
-}
-.social-icons .icon-04 {
-  background-color: #f43b8d;
-  padding: 8px 13px;
-  border-radius: 50%;
-}
-.footer-container {
-  background: #000;
-}
-.footer-bloc h2 {
-  font-family: "Grey Qo", cursive;
-  font-weight: 600;
-  color: #e30071;
-}
-.footer-bloc h4 {
-  font-family: "Grey Qo", cursive;
-  font-weight: 600;
-  color: #e30071;
-}
 .list-unstyled li {
   list-style: none;
 }

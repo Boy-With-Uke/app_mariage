@@ -1,9 +1,18 @@
-window.addEventListener("scroll", function () {
+(function () {
   const navbar = document.querySelector(".site-navbar");
-  if (window.scrollY > 50) {
-    // Si la page est défilée de plus de 50px
-    navbar.classList.add("sticky"); // Ajouter la classe 'sticky' pour rendre le navbar fixe
-  } else {
-    navbar.classList.remove("sticky"); // Supprimer la classe 'sticky' si on remonte en haut
+
+  if (navbar && navbar.classList.contains("always-sticky")) {
+    navbar.classList.add("sticky");
   }
-});
+
+  // Toujours écouter le défilement pour mettre à jour la classe sticky si nécessaire
+  window.addEventListener("scroll", function () {
+    if (!navbar.classList.contains("always-sticky")) {
+      if (window.scrollY > 50) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+  });
+})();
