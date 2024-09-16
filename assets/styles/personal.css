@@ -115,7 +115,7 @@ a:hover {
   border-color: #85cce0;
 }
 
-.custom-button-outlined {
+.rowContainer .custom-button-outlined {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -128,26 +128,18 @@ a:hover {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  color: transparent;
-  background-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  color: hwb(333 23% 4%) !important;
   border-color: hwb(333 23% 4%);
-  background-color: hwb(333 23% 4%);
+  background-color: transparent !important;
 }
-
 .custom-button-outlined:hover {
-  background-color: transparent;
-  background-color: hwb(335 18% 16%);
-  border-color: hwb(335 18% 16%), hwb(192 64% 6%);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  color: white !important;
+  background-color: hwb(333 23% 4%) !important;
 }
-
 .custom-button-outlined:focus,
 .custom-button-outlined.focus {
   box-shadow: 0 0 0 0.2rem rgba(244, 59, 141, 0.5);
+  color: white !important;
 
   border-image: #b8295e;
 }
@@ -157,9 +149,7 @@ a:hover {
   background-color: transparent;
   background-color: #b8295e;
   border-color: #b8295e;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  color: #b8295e;
 }
 
 .custom-input {

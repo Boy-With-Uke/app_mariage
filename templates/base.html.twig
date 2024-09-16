@@ -17,18 +17,23 @@
 			{{
       encore_entry_script_tags("app")
     }}
+			<script src="{{ asset('./js/nav.js') }}"></script>
+
 			<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 		{% endblock %}
 	</head>
 
 	<body>
-		{% set active_link = active_link|default('') %}
-		{% set isSticky = isSticky %}
-		{% block navbar %}
+		<div class="bodies">
+			{% set active_link = active_link|default('') %}
+			{% set isSticky = isSticky %}
 
-			<header {% if isSticky == true %} class="site-navbar always-sticky" {% else %} class="site-navbar" {% endif %} role="banner">
-				<script>
-					(function () {
+			{# TODO: add a navbar  #}
+			{% block navbar %}
+
+				<header {% if isSticky == true %} class="site-navbar always-sticky" {% else %} class="site-navbar" {% endif %} role="banner">
+					<script>
+						(function () {
 const navbar = document.querySelector(".site-navbar");
 
 if (navbar && navbar.classList.contains("always-sticky")) {
@@ -46,134 +51,196 @@ navbar.classList.remove("sticky");
 }
 });
 })();
-				</script>
-				<div class="container">
-					<div class="hearts"></div>
-					<div class="row align-items-center">
-						<div class="col-12 col-xl-2">
-							<h1 class="mb-0 site-logo">
-								<a href="{{ path('home.plan_mariage') }}" class="brand">App Mariage</a>
-							</h1>
-						</div>
-						<div class="col-12 col-md-10 d-none d-xl-block">
-							<nav class="text-right site-navigation position-relative" role="navigation">
-								<ul class="mr-auto site-menu js-clone-nav d-none d-lg-block">
-									<li {% if active_link == 'home' %} class="active" {% endif %}>
-										<a href="{{ path('home.plan_mariage') }}">
-											<span>Accueil</span>
-										</a>
-									</li>
-									<li {% if active_link == 'a_propos' %} class="active" {% endif %}>
-										<a href="{{ path('home.plan_mariage') }}">
-											<span>À propos</span>
-										</a>
-									</li>
-									<li {% if active_link == 'galerie' %} class="active" {% endif %}>
-										<a href="listings.html">
-											<span>Galerie</span>
-										</a>
-									</li>
-									<li {% if active_link == 'prestataire' %} class="active" {% endif %}>
-										<a href="{{ path('prestataireComplet') }}">
-											<span>
-												Besoin prestataire</span>
-										</a>
-									</li>
+					</script>
+					<!-- Menu déroulant pour mobile -->
+					<div class="mobile-menu d-xl-none">
+						<nav class="site-mobile-menu">
+							<i class="fa-solid fa-circle-xmark xmark h3"></i>
+							<ul class="site-menu">
+								<li {% if active_link == 'home' %} class="active" {% endif %}>
+									<a href="{{ path('home.plan_mariage') }}">
+										<span class="text-red-500">Accueil</span>
+									</a>
+								</li>
+								<li {% if active_link == 'a_propos' %} class="active" {% endif %}>
+									<a href="{{ path('home.plan_mariage') }}">
+										<span>À propos</span>
+									</a>
+								</li>
+								<li {% if active_link == 'galerie' %} class="active" {% endif %}>
+									<a href="listings.html">
+										<span>Galerie</span>
+									</a>
+								</li>
+								<li {% if active_link == 'prestataire' %} class="active" {% endif %}>
+									<a href="{{ path('prestataireComplet') }}">
+										<span>
+											Besoin prestataire</span>
+									</a>
+								</li>
 
-									{% if is_granted('ROLE_ADMIN') %}
-										<li {% if active_link == 'admin' %} class="active" {% endif %}>
-											<a href="{{ path('admin_app') }}">
-												<span>Administration</span>
-											</a>
-										</li>
-									{% endif %}
-									{% if app.user %}
-										<li {% if active_link == 'projet' %} class="active" {% endif %}>
-											<a href="{{ path('activite.app_mariage') }}">
-												<span>Mon projet</span>
-											</a>
-										</li>
-									{% endif %}
-									{% if app.user %}
-										<li>
-											<a href="{{ path('app_logout') }}" class="custom-button-outlined">Deconnexion</a>
-										</li>
-									{% else %}
-										<li>
-											<a href="{{ path('app_login') }}" class="custom-button-outlined btn-login">&nbsp Connexion &nbsp</a>
-										</li>
-										<li>
-											<a href="{{ path('app_inscr') }}" class="custom-button-outlined btn-signup">&nbsp Inscription &nbsp</a>
-										</li>
-									{% endif %}
-								</ul>
-							</nav>
-						</div>
-
-						<div class="py-3 mr-auto d-inline-block d-xl-none ml-md-0" style="position: relative; top: 3px">
-							<a href="#" class="text-white site-menu-toggle js-menu-toggle">
-								<span class="icon-menu h3"></span>
-							</a>
-						</div>
+								{% if is_granted('ROLE_ADMIN') %}
+									<li {% if active_link == 'admin' %} class="active" {% endif %}>
+										<a href="{{ path('admin_app') }}">
+											<span>Administration</span>
+										</a>
+									</li>
+								{% endif %}
+								{% if app.user %}
+									<li {% if active_link == 'projet' %} class="active" {% endif %}>
+										<a href="{{ path('activite.app_mariage') }}">
+											<span>Mon projet</span>
+										</a>
+									</li>
+								{% endif %}
+								{% if app.user %}
+									<li>
+										<a href="{{ path('app_logout') }}" class="custom-button-outlined">Deconnexion</a>
+									</li>
+								{% else %}
+									<li>
+										<a href="{{ path('app_login') }}" class="custom-button-outlined btn-login">&nbsp Connexion &nbsp</a>
+									</li>
+									<li>
+										<a href="{{ path('app_inscr') }}" class="custom-button-outlined btn-signup">&nbsp Inscription &nbsp</a>
+									</li>
+								{% endif %}
+							</ul>
+						</nav>
 					</div>
-				</div>
-			</header>
-		{% endblock %}
-		{% block body %}{% endblock %}
-		{% block footer %}
-			<div class="conteneur">
-				<footer class="pt-5 pb-5 container-fluid footer-container">
-					<div class="hearts"></div>
 					<div class="container">
-						<div class="pt-5 pb-5 row">
-							<div class="col-md-4 footer-bloc">
-								<h2>My Logo</h2>
-								<hr/>
-								<h4>Contact Information</h4>
+						<div class="hearts"></div>
+						<div class="row align-items-center">
+							<div class="col-12 col-xl-2">
+								<h1 class="mb-0 site-logo">
+									<a href="{{ path('home.plan_mariage') }}" class="brand">App Mariage</a>
+								</h1>
 							</div>
-							<div class="text-black col-md-4">
-								<h5>Liens Utiles</h5>
-								<ul class="list-unstyled">
-									<li>
-										<a href="#">Accueil</a>
-									</li>
-									<li>
-										<a href="#">Services</a>
-									</li>
-									<li>
-										<a href="#">Contact</a>
-									</li>
-									<li>
-										<a href="#">À Propos</a>
-									</li>
-								</ul>
+							<div class="col-12 col-md-10 d-none d-xl-block">
+								<nav class="text-right site-navigation position-relative" role="navigation">
+									<ul class="mr-auto site-menu js-clone-nav d-none d-lg-block">
+										<li {% if active_link == 'home' %} class="active" {% endif %}>
+											<a href="{{ path('home.plan_mariage') }}">
+												<span>Accueil</span>
+											</a>
+										</li>
+										<li {% if active_link == 'a_propos' %} class="active" {% endif %}>
+											<a href="{{ path('home.plan_mariage') }}">
+												<span>À propos</span>
+											</a>
+										</li>
+										<li {% if active_link == 'galerie' %} class="active" {% endif %}>
+											<a href="listings.html">
+												<span>Galerie</span>
+											</a>
+										</li>
+										<li {% if active_link == 'prestataire' %} class="active" {% endif %}>
+											<a href="{{ path('prestataireComplet') }}">
+												<span>
+													Besoin prestataire</span>
+											</a>
+										</li>
+
+										{% if is_granted('ROLE_ADMIN') %}
+											<li {% if active_link == 'admin' %} class="active" {% endif %}>
+												<a href="{{ path('admin_app') }}">
+													<span>Administration</span>
+												</a>
+											</li>
+										{% endif %}
+										{% if app.user %}
+											<li {% if active_link == 'projet' %} class="active" {% endif %}>
+												<a href="{{ path('activite.app_mariage') }}">
+													<span>Mon projet</span>
+												</a>
+											</li>
+										{% endif %}
+										{% if app.user %}
+											<li>
+												<a href="{{ path('app_logout') }}" class="custom-button-outlined">Deconnexion</a>
+											</li>
+										{% else %}
+											<li>
+												<a href="{{ path('app_login') }}" class="custom-button-outlined btn-login">&nbsp Connexion &nbsp</a>
+											</li>
+											<li>
+												<a href="{{ path('app_inscr') }}" class="custom-button-outlined btn-signup">&nbsp Inscription &nbsp</a>
+											</li>
+										{% endif %}
+									</ul>
+								</nav>
 							</div>
-							<div class="col-md-4">
-								<form>
-									<div class="form-group">
-										<input type="email" class="form-control custom-input" id="exampleInputEmail1" placeholder="Email address"/>
+
+							<!-- Hamburger Menu (visible sur mobile) -->
+							<div class="py-3 mr-auto d-inline-block d-xl-none ml-md-0" style="position: relative; top: 3px">
+								<a href="#" class="text-white site-menu-toggle js-menu-toggle">
+
+									<span class="fa-solid fa-bars h3"></span>
+								</a>
+
+							</div>
+						</div>
+
+
+					</div>
+				</header>
+			{% endblock %}
+			{% block body %}{% endblock %}
+			{% block footer %}
+				<div class="conteneur">
+					<footer class="pt-5 pb-5 container-fluid footer-container">
+						<div class="hearts"></div>
+						<div class="container">
+							<div class="pt-5 pb-5 row">
+								<div class="col-md-4 footer-bloc">
+									<h2>My Logo</h2>
+									<hr/>
+									<h4>Contact Information</h4>
+								</div>
+								<div class="text-black col-md-4">
+									<h5>Liens Utiles</h5>
+									<ul class="list-unstyled">
+										<li>
+											<a href="#">Accueil</a>
+										</li>
+										<li>
+											<a href="#">Services</a>
+										</li>
+										<li>
+											<a href="#">Contact</a>
+										</li>
+										<li>
+											<a href="#">À Propos</a>
+										</li>
+									</ul>
+								</div>
+								<div class="col-md-4">
+									<form>
+										<div class="form-group">
+											<input type="email" class="form-control custom-input" id="exampleInputEmail1" placeholder="Email address"/>
+										</div>
+									</form>
+									<br/>
+									<div class="social-icons">
+										<span>
+											<i class="fa-brands fa-facebook-f"></i>
+										</span>
+										<span class="icon-02">
+											<i class="fa-brands fa-twitter"></i>
+										</span>
+										<span class="icon-03">
+											<i class="fa-solid fa-envelope"></i>
+										</span>
+										<span class="icon-04">
+											<i class="fa-brands fa-youtube"></i>
+										</span>
 									</div>
-								</form>
-								<br/>
-								<div class="social-icons">
-									<span>
-										<i class="fa-brands fa-facebook-f"></i>
-									</span>
-									<span class="icon-02">
-										<i class="fa-brands fa-twitter"></i>
-									</span>
-									<span class="icon-03">
-										<i class="fa-solid fa-envelope"></i>
-									</span>
-									<span class="icon-04">
-										<i class="fa-brands fa-youtube"></i>
-									</span>
 								</div>
 							</div>
 						</div>
-					</div>
-				</footer>
-			</div>
-		{% endblock %}
+					</footer>
+				</div>
+			{% endblock %}
+		</div>
 	</body>
 </html>
