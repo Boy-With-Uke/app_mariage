@@ -481,3 +481,8 @@
   color: white !important;
   background-color: hwb(333 23% 4%) !important;
 }
+.menu-open {
+  filter: blur(2px);
+  opacity: 0.5;
+}
+	

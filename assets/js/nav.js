@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Ouvrir/fermer le menu avec le bouton hamburger
   if (toggle && mobileMenu) {
     toggle.addEventListener("click", function (e) {
+      e.preventDefault();
       if (mobileMenu.classList.contains("active")) {
         closeMenu();
       } else {
