@@ -2,94 +2,117 @@
 {% set active_link = 'home' %}
 {% set isSticky = true %}
 
-{% block navbar %}
-<link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+{% block javascript %}
+	<script src="{{ asset('./js/hearts.js') }}"></script>
+
+
+	<link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 {% endblock %}
 
-{%block body%}
+{% block stylesheets %}
+	{{ encore_entry_link_tags("app") }}
+	<link rel="stylesheet" href="{{ asset('./styles/personal.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('./styles/hearts.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('./styles/nav.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('./styles/footer.css') }}"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
 
-<div class="activity-form">
-	<div class="form-row-app">
-		<a class="close_a" href="/activite/">X</a>
-	{{ form_start(form) }}
-	{{ form_row(form.NomH)}}
-	{{ form_row(form.NomF)}}
-	{{ form_row(form.DateCeremonie ,{'id':'datepicker'}) }}
-	{{ form_row(form.LieuxCeremonie) }}
-	{{ form_row(form.LieuxDeReception) }}
-	{{ form_row(form.BudgetInitial) }}	
-	{{ form_row(form.PhotoPrincipal) }}
-	<img src="\uploads\images\{{photo_principal}}">
-	{{ form_row(form.PhotoReception) }}
-	<img src="\uploads\images\{{photo_reception}}">
-	{{ form_row(form.PhotoCeremonie) }}
-	<img src="\uploads\images\{{photo_ceremonie}}">
-	{{ form_row(form.FichierCsv)}}
-	<button class="btn btn-success">Enregistrer</button>
-	{{ form_end(form) }}
+{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block body %}
+
+	<div class="activity-form formulaire">
+			<div class="hearts"></div>
+	
+		<div class="form-row-app">
+			<a class="fa-regular fa-circle-xmark h1 xmark" href="/activite/"></a>
+			<div class="row">
+				<div class="col-md-6">
+					{{ form_start(form) }}
+					{{ form_row(form.NomH, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Nom d\'utilisateur'
+        }})}}
+					{{ form_row(form.NomF, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Nom d\'utilisateur'
+        }})}}
+					{{ form_row(form.DateCeremonie ,{'attr': {'class': 'form-control custom-input', 'placeholder': 'Nom d\'utilisateur'
+        }, 'id':'datepicker'}) }}
+					{{ form_row(form.LieuxCeremonie, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Nom d\'utilisateur'
+        }}) }}
+					{{ form_row(form.LieuxDeReception, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Nom d\'utilisateur'
+        }}) }}
+					{{ form_row(form.BudgetInitial, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Nom d\'utilisateur'
+        }}) }}
+
+				</div>
+				<div class="col-md-6">
+					{{ form_row(form.PhotoPrincipal) }}
+					<img src="/uploads/images/{{photo_principal}}">
+					{{ form_row(form.PhotoReception) }}
+					<img src="/uploads/images/{{photo_reception}}">
+					{{ form_row(form.PhotoCeremonie) }}
+					<img src="/uploads/images/{{photo_ceremonie}}">
+					{{ form_row(form.FichierCsv)}}
+				</div>
+			</div>
+			<div class="mx-auto row d-flex justify-content-center">
+				<button class="mt-5 custom-button">Enregistrer</button>
+				{{ form_end(form) }}
+			</div>
+		</div>
 	</div>
-</div>
 
-<style>
-	.close_a {
-  color: aliceblue;
-  background-color: red;
-  font-size: 20px;
-  border-radius: 50%;
-  padding: 6px;  
-  text-align: end;
-  position: absolute;
-  right: 10px;
-  top: 2px;  
-  border: 3px solid;
-}
-.close_a:hover {
-  color: red;
-  background-color: aliceblue;
-  font-size: 20px;
-  border-radius: 50%;
-  padding: 6px;
-  text-align: end;
-  position: absolute;
-  right: 10px;
-  top: 2px;
-  border: 3px solid;
-  transition: 2s;
-  text-decoration: none;
-}
+	<style>
 
-	.activity-form {
-  position: relative;
-  background-color: rgba(200, 200, 202, 0.5);
-  margin: 2%;
-  padding: 30px;
-  color: greenyellow;
-  font-size: 20px;
-  border: 2px solid tomato;
-  box-shadow: 0px 1px 15px 5px tomato;
-}
+		.xmark {
+			display: flex;
+			justify-content: flex-end;
+			padding-right: 10px; /* Adjust this value to match your desired padding */
+		}
 
-body {
-  background-color: #212529;
-}
+		.activity-form {
+			position: relative;
+			background-color: rgba(200, 200, 202, 0.5);
+
+			padding: 30px;
+			color: #E30071;
+			font-size: 20px;
+			border: 2px solid #F65A9F;
+			box-shadow: 0 1px 18px 1px #F65A9F;
+		}
+
+		body {
+			background-color: white;
+			padding: 10%;
+
+		}
 	</style>
 
+	<script>
+		const xmark = document.querySelector(".fa-regular.fa-circle-xmark.h2");
 
-    <script>
-        $(document).ready(function () {			
-            $(function () {
-                $("#datepicker").
-                datepicker({
-					dateFormat :"yy-mm-dd"
-				}
-				);
-            });
-        }) 
+xmark.addEventListener("mouseover", function () {
+xmark.classList.remove("fa-regular");
+xmark.classList.add("fa-solid");
+});
 
-		
-    </script>
+xmark.addEventListener("mouseout", function () {
+xmark.classList.remove("fa-solid");
+xmark.classList.add("fa-regular");
+});
+	</script>
 
 
-{%endblock%}
+	<script>
+		$(document).ready(function () {
+$(function () {
+$("#datepicker").datepicker({dateFormat: "yy-mm-dd"});
+});
+})
+	</script>
+
+
+{% endblock %}
+{% block footer %}{% endblock %}
