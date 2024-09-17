@@ -1,19 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Qwigley&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Qwigley&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Qwigley&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Qwigley&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
-*{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .tab-content > .tab-pane {
-    display: none;
-  }
-  .tab-content > .active {
-    display: block;
-  }
+  display: none;
+}
+.tab-content > .active {
+  display: block;
+}
 
 .row {
   margin-right: 0 !important;
@@ -21,18 +25,17 @@
 }
 
 /* menu-collaps-01 */
-.box-mari{
+.box-mari {
   position: relative;
-  
 }
-.arrow-icon{
+.arrow-icon {
   position: absolute;
   cursor: pointer;
   padding: 15px;
   top: 0;
   left: 0;
 }
-.pen-modif{
+.pen-modif {
   position: absolute;
   display: none;
   cursor: pointer;
@@ -40,8 +43,6 @@
   top: 0;
   right: 0;
 }
-
-
 
 /* menu-collaps-02 */
 .box-about-event {
@@ -57,7 +58,7 @@
   top: 0;
   left: 0;
 }
-.pen-modif2{
+.pen-modif2 {
   position: absolute;
   display: none;
   cursor: pointer;
@@ -66,8 +67,6 @@
   right: 0;
 }
 
-
-
 /* menu-collaps-03 */
 .add-guest {
   position: relative;
@@ -75,17 +74,17 @@
   border-bottom: 1px solid #00000015;
   border-left: 1px solid #00000015;
 }
-.add-guest a{
+.add-guest a {
   background-color: #dd8090;
   color: #fff;
   padding: 5px 10px;
 }
- .add-guest a:hover{
-    border: 1px solid #dd8090;
-    color: #dd8090;
-    background: transparent;
-    text-decoration: none;
-} 
+.add-guest a:hover {
+  border: 1px solid #dd8090;
+  color: #dd8090;
+  background: transparent;
+  text-decoration: none;
+}
 .arrow-icon3 {
   position: absolute;
   cursor: pointer;
@@ -106,15 +105,14 @@
   justify-content: space-around;
   align-items: center;
 }
-.rotate{
+.rotate {
   transform: rotate(-90deg);
 }
-.show-pen{
+.show-pen {
   display: block;
 }
 
-
-.add-guest-form input[type="text"]{
+.add-guest-form input[type="text"] {
   outline: none;
   border-top: none;
   border-bottom: 2px solid #00000049;
@@ -170,9 +168,8 @@
   padding: 5px;
 }
 
-
 /* Budget */
-.budget-amount input[type = 'text']{
+.budget-amount input[type="text"] {
   background-color: #8080801e;
   border: none;
   outline: none;
@@ -180,8 +177,8 @@
 .search {
   position: relative;
 }
-.search .filter{
-  padding:5px 25px;
+.search .filter {
+  padding: 5px 25px;
   outline: none;
   border: 1px solid #0b98eb;
   border-radius: 5px;
@@ -209,8 +206,7 @@
   left: 5px;
 }
 
-
-.beautyChild01 input[type='text']{
+.beautyChild01 input[type="text"] {
   border: none;
   border-bottom: 2px solid #00000028;
   outline: none;
@@ -223,13 +219,13 @@ table td {
 }
 
 /* Prenstataire */
-.add-prest{
+.add-prest {
   border: 1px dashed #0b98eb;
   width: 250px;
   cursor: pointer;
   color: #0b98eb;
 }
-.add-prest i{
+.add-prest i {
   font-size: 35px;
   color: #0b98eb;
 }
@@ -245,40 +241,40 @@ table td {
   transform: scale(1.1);
   box-shadow: 6px 7px 5px -3px #0000003b;
 } */
-.card-1{
+.card-1 {
   color: #fff;
   background-image: url(assets/pictures/sakafo01.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
-.card-2{
+.card-2 {
   color: #fff;
   background-image: url(assets/pictures/sakafo02.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
-.card-3{
+.card-3 {
   color: #fff;
   background-image: url(assets/pictures/sakafo03.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
-.card-4{
+.card-4 {
   color: #fff;
   background-image: url(assets/pictures/sakafo01.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
-.card-1 img{
+.card-1 img {
   width: 30px;
 }
-.card-1 .ellipsis{
+.card-1 .ellipsis {
   position: absolute;
   cursor: pointer;
   top: 10px;
   right: 5px;
 }
-.show-prest{
+.show-prest {
   position: absolute;
   width: 200px;
   padding: 5px 0px;
@@ -289,14 +285,11 @@ table td {
   top: 4%;
   right: 12%;
 }
-.show-prest i{
+.show-prest i {
   margin-right: 5px;
 }
 
-
-
 /* modal */
-
 
 .modal {
   display: none;
@@ -307,7 +300,7 @@ table td {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   /* background-color: rgb(0 0 0 / 12%); */
 }
 
@@ -328,7 +321,7 @@ table td {
   line-height: 1;
   color: #fff;
   text-shadow: 0 1px 0 #fff;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .close {
@@ -354,17 +347,16 @@ table td {
 .about-prest {
   position: absolute;
   bottom: 5%;
-  left:5%;
+  left: 5%;
   color: #fff;
 }
 .scrollBar {
   height: 100vh;
   overflow: auto;
-  
 }
 .bg-modal {
   background: #fff;
-  box-shadow: 0px 0px 133px 8px rgba(117,116,117,1);
+  box-shadow: 0px 0px 133px 8px rgba(117, 116, 117, 1);
 }
 .btnBloc button {
   padding: 8px 18px;
@@ -373,7 +365,8 @@ table td {
   outline: none;
   cursor: pointer;
 }
-.btnBloc button:focus, button:active {
+.btnBloc button:focus,
+button:active {
   outline: none;
 }
 .btnBloc .btn01 {
@@ -408,7 +401,7 @@ table td {
 }
 .btn-add-guestF:focus {
   outline: none;
-} 
+}
 
 .selectBlocH {
   position: absolute;
@@ -419,8 +412,8 @@ table td {
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.397);
   cursor: pointer;
   z-index: 1;
-  }
-  .selectBlocF {
+}
+.selectBlocF {
   cursor: pointer;
   position: absolute;
   width: 200px;
@@ -433,7 +426,7 @@ table td {
 }
 
 #valide {
-  display: inline-block;  
+  display: inline-block;
 }
 
 #newinput_garcon_dhonneur {
@@ -444,13 +437,11 @@ table td {
   display: inline-block;
 }
 
-
 * {
   margin: 0;
   padding: 0;
 }
 body {
-  
   font-family: verdana;
 }
 .popup {
@@ -467,7 +458,7 @@ body {
   z-index: 1;
   .popup__content {
     width: 80%;
-    overflow:auto;
+    overflow: auto;
     padding: 50px;
     background: white;
     color: black;
@@ -486,7 +477,7 @@ body {
         cursor: pointer;
         position: fixed;
         width: 22px;
-        height: 24px;       
+        height: 24px;
         background-color: #000;
         border-radius: 50%;
         color: #fff;
@@ -520,47 +511,113 @@ button {
   margin-left: 1rem;
 }
 
-.sign_retour {        
+.sign_retour {
   font-size: 64px;
   position: absolute;
   left: 21%;
   color: red;
-  text-align: center;        
+  text-align: center;
   padding: 7px;
   z-index: 1;
   margin-top: -34px;
 }
 
-.navbar_app{
-  background-color: #faebd7 !important;
+.navbar_app {
+  width: 100%;
+  box-shadow: 0 2px 4px hsla(330, 90%, 65%, 0.7);
+  z-index: 10000;
+  position: fixed !important;
+  background-color: white !important;
   height: 100px;
 }
 
 ._app_mariage {
   border-radius: 20px;
-  border: 1px solid !important;
-  padding: 15px 24px !important;
   font-size: 21px !important;
-  color: brown !important;
+  color: #f65a9f !important;
   text-align: center !important;
   text-transform: lowercase !important;
-  margin-left:15px !important;
+  margin-left: 15px !important;
+}
+.hf_app_mariage{
+  color: #f65a9f !important;
+  text-transform: capitalize !important;
+  font-family: "Grey Qo", cursive;
+  font-size: 80px !important;
 }
 
+.nav-menu span {
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 5px;
+}
 
+#intro-example {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  object-fit: cover;
+  height: 100vh !important;
+}
+
+.jrs-j {
+  color: #e30071 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px !important;
+}
+
+.styledName {
+  font-family: "Dancing Script";
+}
+
+.nameDiv {
+  margin-top: 50px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titre_app_nom {
+  height: auto !important;
+  width: auto !important;
+  height: auto;
+  margin: auto;
+  padding: 5% 5%;
+  background-color: rgb(246, 90, 159, 0.5);
+  border-radius: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titre_app_nom .styledName {
+  font-size: 100px; /* Change this value to adjust the font size */
+}
+
+.text-header {
+  position: relative;
+  font-family: "Lora";
+}
 ._app_mariage.app_mariage_nom {
-  color: cadetblue !important;
+  color: #f65a9f !important;
   text-transform: capitalize !important;
-  font-size: 37px !important;
+  font-family: "Grey Qo", cursive;
+  font-size: 80px !important;
+  margin-top: -15px;
+}
+
+.presta-button {
+  margin: 0px 20px;
+  padding: 13px 10px;
 }
 
 ._app_mariage.repondre_app_mariage {
   margin-right: 15px;
-}
-
-._app_mariage:hover {
-  background-color: antiquewhite !important;  
-  opacity: 0.60 !important;
 }
 
 ._app_mariage.icons_svg_app_mariage {
@@ -569,7 +626,7 @@ button {
 
 .connexion_app_mariage {
   font-size: 17px !important;
-  display: contents !important; 
+  display: contents !important;
 }
 
 .icons_svg_app_mariage:hover {
@@ -581,38 +638,23 @@ button {
   position: relative !important;
   width: calc(100% - 1em) !important;
   height: calc(100%-1em) !important;
-
-}
-.titre_app_nom {
-  font-size: 150px;
-  text-align: center;
-  text-transform: capitalize;
-  color: color-mix !important;
-  font-family: inherit;
-  background-color: rgba(100, 210, 100, 0.5);
-  border-radius: 10px;
 }
 
-.lieux_de_ceremonie_app {  
-  border-color: crimson !important; 
+.lieux_de_ceremonie_app {
+  border-color: crimson !important;
   border-radius: 50px !important;
   border: 2px solid;
   height: 50% !important;
   text-align: center;
-  width: calc(100% - 44em);  
+  width: calc(100% - 44em);
   background-color: #fff !important;
   color: blue !important;
 }
 
-.jrs-j {
-  background-color: rgba(255, 0, 200, 0.4);
-  width: calc(100% - 41em);
-  border-radius:50px;
-}
-
 .week-app-mariage {
-  background-color: #ac5e23;
-  color: #fff;
+  background-color: white;
+  box-shadow: 0 2px 4px hsla(330, 90%, 65%, 0.7);
+  color: #e30071;
   position: inherit;
   height: 500px;
 }
@@ -626,13 +668,13 @@ button {
   text-align: center;
 }
 
-.week_comment{
+.week_comment {
   padding: 10%;
-  font-size:22px !important;
+  font-size: 22px !important;
   text-align: center;
 }
 .l_titre {
-  font-size: 14px; 
+  font-size: 14px;
   text-align: match-parent;
 }
 
@@ -647,11 +689,11 @@ button {
 }
 .app_active_settings {
   text-align: end;
-  margin-right: 44px; 
+  margin-right: 244px;
 }
 
 .app_active_settings_items {
-  background-color: rgba(150, 158, 136, 0.5) !important;  
+  background-color: rgb(245, 89, 159, 0.5) !important;
 }
 .link_app {
   color: white !important;
@@ -660,22 +702,26 @@ button {
   font-family: inherit;
 }
 .settings {
-  background-color: antiquewhite;
+  background-color: blue;
+  position: absolute !important;
+  right: 150px;
+  top: 76px;
 }
 
-.link_app:hover { 
+.link_app:hover {
   color: #ffffff !important;
   text-decoration: none;
-  background-color: #92a5b3 !important;
+  background-color: #e30071 !important;
 }
 
 .footer_wedding {
-  background-color: #ac5e23;
-  color: #fff;
+  background-color: white;
+  color: #000;
   position: inherit;
-  height: 500px;
+  height: 300px;
   padding-top: 5%;
   line-height: 10px;
+  box-shadow: 0px -5px 10px 0px rgba(255, 0, 128, 0.5);
 }
 
 .mariage_hf {
@@ -685,31 +731,30 @@ button {
   text-shadow: 2px 2px #15ffff, -4px 0px aqua;
 }
 
-
 .ul_menu_app {
-  line-height: normal; 
+  line-height: normal;
 }
 
 .ancre_app_menu {
-  color: #fff !important; 
+  color: #000 !important;
   text-decoration: none;
   list-style: circle;
 }
 .prestataire_mariage_app {
-  background-color: #ac5e23;
+  background-color: white;
   padding: 10px;
 }
 
 .liste_prestataire_plus_suivre {
-  color: antiquewhite;
+  color: white;
   text-align: center;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: #c47799;
   border-radius: 4px;
 }
 .card_app_mariage {
   padding: 0px;
   border-radius: 2px !important;
-  border: 0px; 
+  border: 0px;
 }
 .price_h1 {
   color: #ac5e23;
@@ -718,7 +763,7 @@ button {
   background-color: #ac5e23 !important;
   border: 2px solid #ac5e23 !important;
 }
-.btn_commande_app:hover{
+.btn_commande_app:hover {
   background-color: #ac5e23 !important;
   border: 2px solid #ac5e23 !important;
 }
