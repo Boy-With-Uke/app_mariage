@@ -653,10 +653,8 @@ button {
 
 .week-app-mariage {
   background-color: white;
-  box-shadow: 0 2px 4px hsla(330, 90%, 65%, 0.7);
   color: #e30071;
-  position: inherit;
-  height: 500px;
+
 }
 
 .week-date {

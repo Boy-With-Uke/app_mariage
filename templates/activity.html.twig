@@ -1,30 +1,7 @@
 {% extends 'base.html.twig'%}
 
-{% set active_link = 'home' %}
 {% set isSticky = true %}
 
-
-{% block stylesheets %}
-
-	<link rel="stylesheet" href="{{ asset('./styles/utils.css') }}"/>
-	<link rel="stylesheet" href="{{asset('./styles/liste.css')}}">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
-
-{% endblock %}
-{% block javascripts %}
-	<script src="jquery.add-input-area.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="{{asset('./js/active.js')}}">
-	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
-
-
-{% endblock %}
 
 {% block navbar %}
 
@@ -170,49 +147,60 @@
 			<!-- Background image -->
 		</header>
 	{% endblock %}
+	{% block stylesheets %}
+
+		<link rel="stylesheet" href="{{ asset('./styles/utils.css') }}"/>
+		<link rel="stylesheet" href="{{asset('./styles/liste.css')}}">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+
+	{% endblock %}
+	{% block javascripts %}
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="jquery.add-input-area.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="{{asset('./js/active.js')}}">
+		<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+	{% endblock %}
 
 	{% block body %}
-		{% if budgetInitial == "" %}
-			<section class="popup">
-				<div class="popup__content">
-					<button type="button" class="close" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<div>
-						<span></span>
-						<span></span>
-					</divid="pop_up">
-					<h3 style="color: #F43B8D;">Vous devez remplisser votre Budget avant de commencer...!</h3>
+		<section class="popup">
+			<div class="popup__content">
+				<button type="button" class="close" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div>
+					<span></span>
+					<span></span>
+				</divid="pop_up">
+				<h3 style="color: #F43B8D;">Vous devez remplisser votre Budget avant de commencer...!</h3>
 
-					<div class="mb-3 input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="basic-addon1">Votre budget :
-							</span>
-						</div>
-						<input type="hidden" id="id_activite" value="{{id}}">
-						<input type="text" id="budget_initial" class="form-control montant custom-input" placeholder="10,000,000" aria-label="budget" aria-describedby="basic-addon1" value="{{budgetInitial}}">
-						<div class="input-group-append">
-							<span class="input-group-text" id="basic-addon2">Ariary</span>
-						</div>
+				<div class="mb-3 input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="basic-addon1">Votre budget :
+						</span>
 					</div>
+					<input type="hidden" id="id_activite" value="{{id}}">
+					<input type="text" id="budget_initial" class="form-control montant custom-input" placeholder="10,000,000" aria-label="budget" aria-describedby="basic-addon1" value="{{budgetInitial}}">
+					<div class="input-group-append">
+						<span class="input-group-text" id="basic-addon2">Ariary</span>
+					</div>
+				</div>
 
-					<h4 style="color: #F65A9F;">Budget minimum : 10.000.000 Ar</h4>
+				<h4 style="color: #F65A9F;">Budget minimum : 10.000.000 Ar</h4>
 
-				</section>
+			</section>
 
-				<script>
-					affiche()
-function affiche() {
-$(".popup").fadeIn(500);
-}
-$(".close").click(function () {
-$(".popup").fadeOut(500);
-});
-				</script>
 
-			{% endif %}
-
-			<div class="week-app-mariage">
+			<div class="row week-app-mariage">
 				<div class="row">
 					<div class="week-date col-md-4">
 						<h1>Le week-end du mariage</h1>
@@ -233,28 +221,29 @@ $(".popup").fadeOut(500);
 				</div>
 			</div>
 
-			<div class="ceremonie-lieu">
-				<div class="row">
-					<div class="col-md-6 cardApp">
-						<div class="cardApp_ceremonie">
-							<img src="/uploads/images/{{photo_ceremonie}}" alt="">
-							<h1>Ceremonie</h1>
-							<p>
-								contenu
-							</p>
+
+			{% if photo_ceremonie != "" and photo_reception != "" %}
+				<div class="row ceremonie-lieu">
+					<div class="row justify-content-center">
+						<div class="col-md-6 cardApp">
+							<div class="text-center cardApp_ceremonie">
+								<img src="/uploads/images/{{photo_ceremonie}}" alt="Ceremonie" class="img-fluid ceremonie-img">
+								<h1>Ceremonie</h1>
+								<p>contenu</p>
+							</div>
 						</div>
-					</div>
-					<div class="col-md-6 cardApp">
-						<div class="cardApp_reception">
-							<img src="/uploads/images/{{photo_reception}}" alt="">
-							<h1>Reception</h1>
-							<p>
-								contenu
-							</p>
+						<div class="col-md-6 cardApp">
+							<div class="text-center cardApp_reception">
+								<img src="/uploads/images/{{photo_reception}}" alt="Reception" class="img-fluid reception-img">
+								<h1>Reception</h1>
+								<p>contenu</p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			{% endif %}
+
+
 			<div class="prestataire_mariage_app" id="prestataire">
 				<h1 class="liste_prestataire_plus_suivre">Les 5 prestataires plus populaires
 					<a href="{{ path('prestataireComplet')}}" style="color: #E30071; text-decoration: none;">voir plus</a>
@@ -290,36 +279,34 @@ $(".popup").fadeOut(500);
 					<tbody>
 						{% for liste_invite in liste_invites %}
 							<tr>
-								<td>{{liste_invite.0}}</td>
-								<td>{{liste_invite.1}}</td>
+								<td>{{ liste_invite[0] is defined ? liste_invite[0] : 'Non renseigné' }}</td>
+								<td>{{ liste_invite[1] is defined ? liste_invite[1] : 'Non renseigné' }}</td>
 								<td></td>
-
 								<td>
-									<a href="#" class="btn btn-success">Appeler/sms</a>
+									<a href="#" class="custom-button">Appeler/sms</a>
 								</td>
 							</tr>
 						{% endfor %}
 					</tbody>
 				</table>
 			</div>
-			{% block footer %}{% endblock %}
 			<div class="footer_wedding">
 				<div class="row">
 					<div class="col-md-4">
 						<div class="hf_app_mariage col">
 
 							{% if nomHomme !="" and nomFemme !="" %}
-								<span class="styledName">{{nomHomme | first}}</span>
-								<br>
+								<span class="styledName" style="margin-top: 50px">{{nomHomme | first}}</span>
+
 								<img style="width: 50px; height: 50px;" src="{{ asset('icons/and.svg') }}" alt="form-svg"/>
-								<br>
-								<span class="styledName">{{nomFemme | first}}</span>
+
+								<span class="styledName" style="margin-top: 50px">{{nomFemme | first}}</span>
 							{% else %}
-								<span class="styledName">Anonyme</span>
-								<br>
+								<span class="styledName" style="margin-top: 50px">Anonyme</span>
+
 								<img style="width: 50px; height: 50px; margin: 40px" src="{{ asset('icons/and.svg') }}" alt="form-svg"/>
-								<br>
-								<span class="styledName">Anonyme</span>
+
+								<span class="styledName" style="margin-top: 50px">Anonyme</span>
 
 							{% endif %}
 						</h1>
@@ -378,6 +365,7 @@ $(".popup").fadeOut(500);
 				border: 2px solid deeppink;
 			}
 		</style>
+
 		<script type="text/javascript">
 
 			const listeMariage = document.querySelector('.liste_invites');
@@ -390,27 +378,6 @@ window.scrollTo(0, 3000)
 
 prestataire.addEventListener('click', function () {
 window.scrollTo(0, 2000)
-})
-
-function montant() {
-var id = $("#id_activite").val()
-let data = {
-montant: $('.montant').val()
-}
-$.ajax({
-url: "/montant/" + id,
-method: "PUT",
-data: data,
-success: function (response) {
-alert('L\'enregistrement a été effectué avec succès...')
-}
-})
-
-
-}
-
-$(".montant").change(function () {
-montant()
 })
 
 
@@ -431,4 +398,71 @@ $('.img_svg_image').removeClass('app_image_svg')
 
 window.addEventListener('scroll', btnReveal);
 		</script>
+
+
+		<script type="text/javascript">
+			$(document).ready(function () { // Function to show the popup
+function affiche() {
+$(".popup").fadeIn(500);
+}
+
+// Log the initial budget to the console
+console.log("{{ budgetInitial }}");
+
+// Close the popup when the close button is clicked
+$(".close").click(function () {
+$(".popup").fadeOut(500);
+});
+
+// Close the popup when clicking outside of it
+$(document).mouseup(function (e) {
+var container = $(".popup__content");
+if (! container.is(e.target) && container.has(e.target).length === 0) {
+$(".popup").fadeOut(500);
+}
+});
+
+// Function to update the budget amount
+function montant() {
+var id = $("#id_activite").val();
+var montantValue = $('.montant').val();
+
+// Validation to ensure the user enters only digits
+if (!/^\d+$/.test(montantValue)) {
+Swal.fire({icon: "error", title: "Erreur de saisie", text: "Veuillez entrer un montant valide (chiffres uniquement).", showConfirmButton: true});
+return; // Stop function execution if validation fails
+}
+
+let data = {
+montant: montantValue
+};
+
+$.ajax({
+url: "/montant/" + id,
+method: "PUT",
+data: data,
+success: function (response) {
+$(".popup").fadeOut(300, function () {
+Swal.fire({icon: "success", title: "Votre budget a été enregistré avec succès !", showConfirmButton: false, timer: 1700});
+});
+},
+error: function (xhr, status, error) {
+console.error("Erreur AJAX:", error);
+Swal.fire({icon: "error", title: "Erreur", text: "Une erreur s'est produite lors de l'enregistrement. Veuillez réessayer.", showConfirmButton: true});
+}
+});
+}
+
+// Call the function when the field changes
+$(".montant").change(function () {
+montant();
+});
+
+// If the initial budget is empty, display the popup
+if ("{{ budgetInitial }}" !== "") {
+affiche();
+}
+});
+		</script>
+
 	{% endblock %}

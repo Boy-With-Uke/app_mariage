@@ -1,0 +1,101 @@
+.xmark {
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 10px; /* Adjust this value to match your desired padding */
+}
+
+.activity-form {
+	position: relative;
+	background-color: rgba(200, 200, 202, 0.5);
+
+	padding: 30px;
+	color: #E30071;
+	font-size: 20px;
+	border: 2px solid #F65A9F;
+	box-shadow: 0 1px 18px 1px #F65A9F;
+}
+
+img {
+	width: 90px;
+	height: 90px;
+}
+
+body {
+	background-color: white;
+	padding: 10%;
+
+}
+/* En-tête du datepicker */
+.ui-datepicker .ui-datepicker-header {
+	background: #F65A9F;
+	border-color: #E30071;
+}
+
+/* Boutons précédent/suivant */
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	background: #E30071;
+}
+
+.ui-datepicker .ui-datepicker-prev:hover,
+.ui-datepicker .ui-datepicker-next:hover {
+	background: #F65A9F;
+	border: none !important;
+	color: white !important;
+
+}
+
+/* Titre du mois/année */
+.ui-datepicker .ui-datepicker-title {
+	color: #fff;
+}
+
+
+
+/* Jours du mois */
+.ui-datepicker td span,
+.ui-datepicker td a {
+	color: #E30071;
+	border: none !important;
+
+}
+
+/* Jour sélectionné */
+.ui-datepicker td a.ui-state-active {
+	background: #E30071;
+	color: #fff;
+}
+
+/* Jour survolé */
+.ui-datepicker td a.ui-state-hover {
+	background: #F65A9F;
+	color: #fff;
+	border: none !important;
+}
+
+/* Jour actuel */
+.ui-datepicker td.ui-datepicker-today a {
+	background: #F65A9F;
+	color: #fff;
+	border: none !important;
+	
+}
+
+/* Boutons du datepicker */
+.ui-datepicker .ui-datepicker-buttonpane button {
+	background: #E30071;
+	color: #fff;
+	border: none !important;
+
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button:hover {
+	background: #F65A9F;
+	border: none !important;
+
+}
+
+/* État désactivé */
+.ui-datepicker .ui-state-disabled span {
+	color: #ffb3d9; /* Version plus claire de #F65A9F */
+}
