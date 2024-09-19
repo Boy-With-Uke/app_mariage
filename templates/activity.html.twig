@@ -459,10 +459,11 @@ montant();
 });
 
 // If the initial budget is empty, display the popup
-if ("{{ budgetInitial }}" !== "") {
+if ("{{ budgetInitial }}" === "") {
 affiche();
 }
 });
 		</script>
 
 	{% endblock %}
+	{% block footer %}{% endblock %}
