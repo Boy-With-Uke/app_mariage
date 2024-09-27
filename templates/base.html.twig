@@ -27,7 +27,7 @@
 		{# TODO: add a navbar  #}
 		{% block navbar %}
 
-			<header {% if isSticky == true %} class="site-navbar always-sticky" {% else %} class="site-navbar" {% endif %} role="banner">
+			<hader {% if isSticky == true %} class="site-navbar always-sticky" {% else %} class="site-navbar" {% endif %} role="banner">
 				<script>
 					(function () {
 const navbar = document.querySelector(".site-navbar");
@@ -179,7 +179,7 @@ navbar.classList.remove("sticky");
 
 
 				</div>
-			</header>
+			</hader>
 		{% endblock %}
 		{% block body %}{% endblock %}
 		{% block footer %}
@@ -209,14 +209,6 @@ navbar.classList.remove("sticky");
 										<a href="#">À Propos</a>
 									</li>
 								</ul>
-							</div>
-							<div class="col-md-4">
-								<form>
-									<div class="form-group">
-										<input type="email" class="form-control custom-input" id="exampleInputEmail1" placeholder="Email address"/>
-									</div>
-								</form>
-								<br/>
 							</div>
 						</div>
 					</div>
