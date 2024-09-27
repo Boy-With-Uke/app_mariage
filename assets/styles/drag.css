@@ -1,0 +1,271 @@
+.main-container {
+  height: 100vh;
+}
+
+.canvas-div {
+ 
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#canvas {
+  border-radius: 15px;
+  border: 8px dashed #e30071;
+}
+
+.component-container {
+  position: absolute;
+  z-index: 10;
+  padding: 15px;
+  gap: 5px;
+  width: 400px !important; 
+  right: 30px; /* Stick the container to the right */
+  top: 0; /* Align to the top */
+  height: auto;
+  overflow-y: auto; /* Handle overflow in smaller screens */
+}
+
+.component-container .main-component {
+  background-color: white;
+  padding: 10px;
+  box-shadow: 15px 15px 30px rgba(244, 59, 141, 0.3),
+  8px 8px 15px rgba(244, 59, 141, 0.2);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column; /* Ensure vertical stacking of elements */
+}
+
+.element {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.element .col-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* Remove padding for responsiveness */
+  flex: 1;
+  gap: 5px !important;
+}
+
+.custom-button {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: #fff;
+  border-color: hwb(333 23% 4%);
+  background-color: hwb(333 23% 4%);
+  width: 100%; /* Added for responsiveness */
+}
+
+.custom-button:hover {
+  background-color: hwb(335 18% 16%);
+  border-color: hwb(335 18% 16%);
+}
+
+.custom-button:focus,
+.custom-button.focus {
+  box-shadow: 0 0 0 0.2rem rgba(244, 59, 141, 0.5);
+}
+
+.custom-button:active,
+.custom-button.active {
+  background-color: hwb(338 16% 28%);
+  border-color: #85cce0;
+}
+
+.custom-input {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.custom-input:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: rgb(244, 59, 141);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(244, 59, 141, 0.25);
+}
+
+.custom-input::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+.custom-input:disabled,
+.custom-input[readonly] {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+
+.custom-button-outlined {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: hwb(333 23% 4%) !important;
+  border-color: hwb(333 23% 4%);
+  background-color: transparent !important;
+  width: 100%; /* Ensure full width */
+}
+
+.custom-button-outlined:hover {
+  color: white !important;
+  background-color: hwb(333 23% 4%) !important;
+}
+
+.custom-button-outlined:focus,
+.custom-button-outlined.focus {
+  box-shadow: 0 0 0 0.2rem rgba(244, 59, 141, 0.5);
+  color: white !important;
+  border-image: #b8295e;
+}
+
+.custom-button-outlined:active,
+.custom-button-outlined.active {
+  background-color: transparent;
+  background-color: #b8295e;
+  border-color: #b8295e;
+  color: #b8295e;
+}
+
+@media (max-width: 768px) {
+  .component-container {
+    width: 100%; /* Ensure it takes the full width on smaller screens */
+    padding: 10px; /* Adjust padding */
+  }
+
+  
+  .custom-button,
+  .custom-button-outlined {
+    font-size: 0.875rem; /* Slightly smaller font for mobile */
+  }
+
+  .main-component {
+    padding: 5px;
+  }
+}
+
+.floating-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+  font-size: 24px;
+}
+
+.floating-button:hover {
+  background-color: #e30071;
+}
+
+/* Masquer component-container sur les écrans de moins de 1024px */
+/* Masquer component-container sur les écrans de moins de 1386px */
+@media (max-width: 1386px) {
+  .component-container {
+    width: 300px;
+    display: none;
+  }
+
+  /* Assurez-vous que le bouton flottant s'affiche */
+  .floating-button {
+    display: block;
+  }
+}
+
+/* Par défaut, cacher le bouton sur les écrans larges */
+@media (min-width: 1387px) {
+  .floating-button {
+    display: none;
+  }
+}
+
+/* Classe pour afficher le component-container */
+.component-visible {
+  display: block !important;
+}
+
+
+
+
+/* From Uiverse.io by omar49511 */ 
+.container-btn-file {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: #e30071;
+  color: #fff;
+  border-style: none;
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 4px 8px 10px -3px rgba(0, 0, 0, 0.356);
+  transition: all 250ms;
+  font-size: 15px;
+}
+.container-btn-file input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.container-btn-file > svg {
+  margin-right: 1em;
+}
+.container-btn-file::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  border-radius: 0.5em;
+  background-color: #f73e9a;
+  z-index: -1;
+  transition: all 350ms;
+}
+.container-btn-file:hover::before {
+  width: 100%;
+}

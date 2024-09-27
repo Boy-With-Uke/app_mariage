@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('heart.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('./styles/drag.css') }}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <title>Plan de la reception</title>
+  </head>
+  <body>
+    <div class="container-fluid main-container">
+      <button class="floating-button" id="toggle-button">
+        &#9776;
+        <!-- Icône de menu (hamburger) -->
+      </button>
+      <div class="row">
+        <div class="col-12 canvas-div">
+          <canvas id="canvas"></canvas>
+        </div>
+
+        <!-- Le div avec col-2 -->
+        <div class="component-container">
+          <div class="row main-component">
+            <div class="row element">
+              <div class="col-5">
+                <button
+                  class="custom-button"
+                  onclick="clearCanvas(canvas, svgState)"
+                >
+                  Save Canvas
+                </button>
+              </div>
+              <div class="col-5">
+                <button
+                  class="custom-button"
+                  onclick="clearCanvas(canvas, svgState)"
+                >
+                  Clear Canvas
+                </button>
+              </div>
+            </div>
+            <div class="row element">
+              <div class="col-5">
+                <button
+                  class="custom-button"
+                  <button
+                  onclick="toggleMode(modes.drawing)"
+                >
+                  Mode dessin libre
+                </button>
+              </div>
+              <div class="col-5">
+                <button class="custom-button" onclick="toggleMode(modes.pan)">
+                  Mode déplacement
+                </button>
+              </div>
+            </div>
+
+            <div class="row element">
+              <div class="col-5">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Ajouter une personne</option>
+                  <option value="1">Les mariées</option>
+                  <option value="2">Un invité</option>
+                  <option value="3">Une invitée</option>
+                  <option value="3">Un animateur</option>
+                  <option value="3">Le prêtre</option>
+                </select>
+              </div>
+              <div class="col-5">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Ajouter un objet</option>
+                  <option value="1" onclick="createCircle(canvas)">
+                    Tables Rondes
+                  </option>
+                  <option value="2" onclick="createRectangle(canvas)">
+                    Table Carré
+                  </option>
+                  <option value="3">Arbre</option>
+                  <option value="3">Chapiteau</option>
+                  <option value="3">Piano</option>
+                  <option value="3">Groupe de musique</option>
+                  <option value="3">Toilettes</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row element">
+              <div class="col-12">
+                <input
+                  value="#000000"
+                  data-jscolor="{}"
+                  id="colorPicker"
+                  class="custom-input"
+                />
+              </div>
+            </div>
+            <div class="row element">
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                <button
+                  class="custom-button-outlined"
+                  onclick="deleteSelectedObject(canvas)"
+                >
+                  Supprimer l'élément sélectionné
+                </button>
+              </div>
+            </div>
+            <div class="row element"></div>
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <button class="container-btn-file">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M6.205 3h11.59c1.114 0 1.519.116 1.926.334.407.218.727.538.945.945.218.407.334.811.334 1.926v7.51l-4.391-4.053a1.5 1.5 0 0 0-2.265.27l-3.13 4.695-2.303-1.48a1.5 1.5 0 0 0-1.96.298L3.005 18.15A12.98 12.98 0 0 1 3 17.795V6.205c0-1.115.116-1.519.334-1.926.218-.407.538-.727.945-.945C4.686 3.116 5.09 3 6.205 3zm9.477 8.53L21 16.437v1.357c0 1.114-.116 1.519-.334 1.926a2.272 2.272 0 0 1-.945.945c-.407.218-.811.334-1.926.334H6.205c-1.115 0-1.519-.116-1.926-.334a2.305 2.305 0 0 1-.485-.345L8.2 15.067l2.346 1.508a1.5 1.5 0 0 0 2.059-.43l3.077-4.616zM7.988 6C6.878 6 6 6.832 6 7.988 6 9.145 6.879 10 7.988 10 9.121 10 10 9.145 10 7.988 10 6.832 9.121 6 7.988 6z"
+                      fill="#ffff"
+                    ></path>
+                  </g>
+                </svg>
+                Image personnelle
+                <input id="myImg" type="file" accept="image/*" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ asset('./js/jscolor.js') }}"></script>
+    <script src="{{ asset('./js/fabric.min.js') }}"></script>
+    <script src="{{ asset('./js/drag.js') }}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.getElementById("toggle-button");
+        const componentContainer = document.querySelector(
+          ".component-container"
+        );
+        let userToggled = false; // Variable pour suivre si l'utilisateur a interagi
+
+        // Ajouter un événement de clic au bouton
+        toggleButton.addEventListener("click", function () {
+          userToggled = true; // L'utilisateur a interagi
+          // Basculer l'affichage du component-container
+          if (componentContainer.classList.contains("component-visible")) {
+            componentContainer.classList.remove("component-visible");
+            componentContainer.style.display = "none";
+          } else {
+            componentContainer.classList.add("component-visible");
+            componentContainer.style.display = "block";
+          }
+        });
+
+        // Vérifier la taille de l'écran au redimensionnement
+        window.addEventListener("resize", function () {
+          if (!userToggled) {
+            // Appliquer les changements uniquement si l'utilisateur n'a pas interagi
+            if (window.innerWidth > 1386) {
+              // Montrer le component-container et cacher le bouton sur les grands écrans
+              componentContainer.style.display = "block";
+              toggleButton.style.display = "none";
+            } else {
+              // Cacher le component-container et montrer le bouton sur les petits écrans
+              componentContainer.style.display = "none";
+              toggleButton.style.display = "block";
+            }
+          }
+        });
+
+        // Initialiser en fonction de la taille de l'écran au chargement
+        if (window.innerWidth <= 1386) {
+          componentContainer.style.display = "none";
+          toggleButton.style.display = "block";
+        } else {
+          componentContainer.style.display = "block";
+          toggleButton.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
