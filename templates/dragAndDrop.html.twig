@@ -37,7 +37,7 @@
             <div class="row element">
               <div class="col-5">
                 <button class="custom-button" id="printButton">
-                  Save Canvas
+                  Enregistrer
                 </button>
               </div>
               <div class="col-5">
@@ -45,7 +45,7 @@
                   class="custom-button"
                   onclick="clearCanvas(canvas, svgState)"
                 >
-                  Clear Canvas
+                  Effacer
                 </button>
               </div>
             </div>
@@ -197,6 +197,22 @@
                 Image personnelle
                 <input id="myImg" type="file" accept="image/*" />
               </button>
+            </div>
+            <div class="row element"></div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                <a  href="{{ path('activite.app_mariage') }}"
+                  class="custom-button-outlined"
+                  onclick="deleteSelectedObject(canvas)"
+                >
+                  Suivant
+                </a>
+              </div>
             </div>
           </div>
         </div>
