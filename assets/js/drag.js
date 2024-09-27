@@ -23,7 +23,7 @@ const initCanvas = (id) => {
 // Met à jour la taille du canvas lors du redimensionnement de la fenêtre
 const resizeCanvas = () => {
   const container = document.querySelector(".canvas-div");
-  const width = container.offsetWidth* 0.9 ; // Set canvas width to 80% of parent on resize
+  const width = container.offsetWidth * 0.9; // Set canvas width to 80% of parent on resize
   const height = container.offsetHeight * 0.9; // Adjust height based on 16:10 ratio
 
   canvas.setWidth(width);
@@ -208,23 +208,42 @@ const restoreCanvas = (canvas, state, imageUrl) => {
 };
 
 const createSvg = (canvas, modes) => {
+  const canvasCenter = canvas.getCenter();
   let svgUrl;
 
   if (modes === svgModes.couple) {
-    svgUrl = "./Images/couple-planning.svg";
-  } else if (modes === svgModes.guest) {
-    svgUrl = "./Images/male-guest-planning.svg";
+    svgUrl = "component/couple-planning.svg";
+  } else if (modes === svgModes.guest_male) {
+    svgUrl = "component/male-guest-planning.svg";
+  } else if (modes === svgModes.guest_female) {
+    svgUrl = "component/female-guest-planning.svg";
+  } else if (modes === svgModes.entertainer) {
+    svgUrl = "component/entertainer.svg";
+  } else if (modes === svgModes.priest) {
+    svgUrl = "component/priest.svg";
+  } else if (modes === svgModes.tree) {
+    svgUrl = "component/tree.svg";
+  } else if (modes === svgModes.chapiteau) {
+    svgUrl = "component/tent.svg";
+  } else if (modes === svgModes.piano) {
+    svgUrl = "component/piano.svg";
+  } else if (modes === svgModes.musician) {
+    svgUrl = "component/musician.svg";
+  } else if (modes === svgModes.toilets) {
+    svgUrl = "component/toilets.svg";
   }
-
   fabric.loadSVGFromURL(svgUrl, (objects, options) => {
     const group = fabric.util.groupSVGElements(objects, options);
     group.set({
       left: canvas.getWidth() / 2,
-      top: canvas.getHeight() / 2,
+      top: -50,
       originX: "center",
       originY: "center",
       cornerColor: "black",
       strokeColor: "black",
+    });
+    group.animate("top", canvasCenter.top, {
+      onChange: canvas.renderAll.bind(canvas),
     });
 
     // Redimensionner le groupe SVG tout en conservant les proportions
@@ -308,7 +327,15 @@ let mousePressed = false;
 let currentMode = "";
 const svgModes = {
   couple: "couple",
-  guest: "guest",
+  guest_male: "guest_male",
+  guest_female: "guest_female",
+  entertainer: "entertainer",
+  priest: "priest",
+  tree: "tree",
+  chapiteau: "chapiteau",
+  piano: "piano",
+  musician: "musician",
+  toilets: "toilets",
 };
 const modes = {
   pan: "pan",
@@ -368,7 +395,3 @@ canvas.on("object:modified", () => {
 });
 
 canvas.requestRenderAll();
-
-
-
-

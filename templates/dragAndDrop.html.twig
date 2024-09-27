@@ -16,6 +16,8 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
     <title>Plan de la reception</title>
   </head>
   <body>
@@ -34,10 +36,7 @@
           <div class="row main-component">
             <div class="row element">
               <div class="col-5">
-                <button
-                  class="custom-button"
-                  onclick="clearCanvas(canvas, svgState)"
-                >
+                <button class="custom-button" id="printButton">
                   Save Canvas
                 </button>
               </div>
@@ -71,11 +70,36 @@
               <div class="col-5">
                 <select class="form-select" aria-label="Default select example">
                   <option selected>Ajouter une personne</option>
-                  <option value="1">Les mariées</option>
-                  <option value="2">Un invité</option>
-                  <option value="3">Une invitée</option>
-                  <option value="3">Un animateur</option>
-                  <option value="3">Le prêtre</option>
+                  <option
+                    value="1"
+                    onclick="createSvg(canvas, svgModes.couple)"
+                  >
+                    Les mariées
+                  </option>
+                  <option
+                    value="2"
+                    onclick="createSvg(canvas, svgModes.guest_male)"
+                  >
+                    Un invité
+                  </option>
+                  <option
+                    value="3"
+                    onclick="createSvg(canvas, svgModes.guest_female)"
+                  >
+                    Une invitée
+                  </option>
+                  <option
+                    value="3"
+                    onclick="createSvg(canvas, svgModes.entertainer)"
+                  >
+                    Un animateur
+                  </option>
+                  <option
+                    value="3"
+                    onclick="createSvg(canvas, svgModes.priest)"
+                  >
+                    Le prêtre
+                  </option>
                 </select>
               </div>
               <div class="col-5">
@@ -87,11 +111,30 @@
                   <option value="2" onclick="createRectangle(canvas)">
                     Table Carré
                   </option>
-                  <option value="3">Arbre</option>
-                  <option value="3">Chapiteau</option>
-                  <option value="3">Piano</option>
-                  <option value="3">Groupe de musique</option>
-                  <option value="3">Toilettes</option>
+                  <option value="3" onclick="createSvg(canvas, svgModes.tree)">
+                    Arbre
+                  </option>
+                  <option
+                    value="3"
+                    onclick="createSvg(canvas, svgModes.chapiteau)"
+                  >
+                    Chapiteau
+                  </option>
+                  <option value="3" onclick="createSvg(canvas, svgModes.piano)">
+                    Piano
+                  </option>
+                  <option
+                    value="3"
+                    onclick="createSvg(canvas, svgModes.musician)"
+                  >
+                    Groupe de musique
+                  </option>
+                  <option
+                    value="3"
+                    onclick="createSvg(canvas, svgModes.toilets)"
+                  >
+                    Toilettes
+                  </option>
                 </select>
               </div>
             </div>
@@ -209,6 +252,12 @@
           toggleButton.style.display = "none";
         }
       });
+
+      document
+        .getElementById("printButton")
+        .addEventListener("click", function () {
+          window.print();
+        });
     </script>
   </body>
 </html>
