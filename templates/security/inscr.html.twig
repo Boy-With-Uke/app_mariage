@@ -1,50 +1,120 @@
-{% extends 'base.html.twig' %}
-{% set active_link = '' %}
-{% set isSticky = true
-%}
-{% block stylesheets %}
-	{{ encore_entry_link_tags("app") }}
-	<link rel="stylesheet" href="{{ asset('./styles/personal.css') }}"/>
-	<link rel="stylesheet" href="{{ asset('./styles/nav.css') }}"/>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+{% extends 'base.html.twig' %} {% set active_link = '' %} {% set isSticky = true
+%} {% block stylesheets %}
+{{ encore_entry_link_tags("app") }}
+<link rel="stylesheet" href="{{ asset('./styles/personal.css') }}" />
+<link rel="stylesheet" href="{{ asset('./styles/nav.css') }}" />
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  rel="stylesheet"
+/>
 
-	<link rel="stylesheet" href="{{ asset('./styles/footer.css') }}"/>
+<link rel="stylesheet" href="{{ asset('./styles/footer.css') }}" />
 
-{% endblock %}
-{% block javascripts %}
-	{{ encore_entry_script_tags("app") }}
-	<script src="{{ asset('./js/error.js') }}"></script>
-	<script src="{{ asset('./js/nav.js') }}"></script>
+{% endblock %} {% block javascripts %}
+{{ encore_entry_script_tags("app") }}
+<script src="{{ asset('./js/error.js') }}"></script>
+<script src="{{ asset('./js/nav.js') }}"></script>
 
-{% endblock %}
-{% block body %}
+{% endblock %} {% block body %}
 
 <div class="content">
-	<div class="container">
-		
-		<div class="p-3 row form-container rowContainer" style="margin: 150px auto; background-color: white">
-			<div class="p-3 col-md-6">
-				{{ form_start(form, {'attr': {'class': 'form-group sing-up-bloc', 'action': path('app_inscr')
-        }}) }}
-				<div class="pb-5 title">
-					<span style="border: none">
-						<img style="width: 90px; height: 90px; margin-top: 50px" src="{{ asset('icons/wedding-rings.svg') }}" alt="form-svg"/>
-					</span>
-					<h2 class="pt-2">Inscrivez-vous</h2>
-				</div>
+  <div class="container">
+    <div class="bubbles">
+      <span style="--i: 11"></span>
+      <span style="--i: 12"></span>
+      <span style="--i: 24"></span>
+      <span style="--i: 10"></span>
+      <span style="--i: 14"></span>
+      <span style="--i: 23"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 16"></span>
+      <span style="--i: 19"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 25"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 22"></span>
+      <span style="--i: 21"></span>
+      <span style="--i: 15"></span>
+      <span style="--i: 13"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 28"></span>
+      <span style="--i: 11"></span>
+      <span style="--i: 12"></span>
+      <span style="--i: 24"></span>
+      <span style="--i: 10"></span>
+      <span style="--i: 14"></span>
+      <span style="--i: 23"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 16"></span>
+      <span style="--i: 19"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 25"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 22"></span>
+      <span style="--i: 21"></span>
+      <span style="--i: 15"></span>
+      <span style="--i: 13"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 28"></span>
+      <span style="--i: 11"></span>
+      <span style="--i: 12"></span>
+      <span style="--i: 24"></span>
+      <span style="--i: 10"></span>
+      <span style="--i: 14"></span>
+      <span style="--i: 23"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 16"></span>
+      <span style="--i: 19"></span>
+      <span style="--i: 18"></span>
+      <span style="--i: 25"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 22"></span>
+      <span style="--i: 21"></span>
+      <span style="--i: 15"></span>
+      <span style="--i: 13"></span>
+      <span style="--i: 26"></span>
+      <span style="--i: 28"></span>
+    </div>
+    <div
+      class="p-3 row form-container rowContainer"
+      style="margin: 150px auto; background-color: white"
+    >
+      <div class="p-3 col-md-6">
+        {{ form_start(form, {'attr': {'class': 'form-group sing-up-bloc', 'action': path('app_inscr')
 
-				{# Username field #}
-				{{ form_row(form.username, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Nom d\'utilisateur'
+
+        }}) }}
+        <div class="pb-5 title">
+          <span style="border: none">
+            <img
+              style="width: 90px; height: 90px; margin-top: 50px"
+              src="{{ asset('icons/wedding-rings.svg') }}"
+              alt="form-svg"
+            />
+          </span>
+          <h2 class="pt-2">Inscrivez-vous</h2>
+        </div>
+
+        {# Username field #}
+        {{ form_row(form.username, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Nom d\'utilisateur'
+
+
         }}) }}
         <br />
         {# Email field #}
         {{ form_row(form.email, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Adresse Email'
+
+
         }}) }}
         <br />
         {# Password fields #}
-        {{ form_row(form.password.first, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Mot de passe'        }}) }}
+        {{ form_row(form.password.first, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Mot de passe'
+
+        }}) }}
         <br />
-        {{ form_row(form.password.second, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Confirmation du mot de passe'        }}) }}
+        {{ form_row(form.password.second, {'attr': {'class': 'form-control custom-input', 'placeholder': 'Confirmation du mot de passe'
+
+        }}) }}
         <br />
         <div class="form-group" id="custom-row">
           <button type="submit" class="custom-button">Valider</button>
@@ -66,4 +136,4 @@
   </div>
 </div>
 
-{% endblock %}
+{% endblock %} {% block footer %}{% endblock %}
