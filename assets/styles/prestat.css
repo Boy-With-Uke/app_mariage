@@ -1,0 +1,208 @@
+@import url("https://fonts.cdnfonts.com/css/jomolhari-3");
+
+
+/* Version courte avec tout en une seule ligne */
+body {
+  background: url("/img/bg_presta.jpg") center center/cover fixed no-repeat;
+}
+
+.card-blur {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+.card-blur:hover .card-background {
+  filter: blur(0);
+}
+
+.card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.view {
+  position: relative;
+  z-index: 1;
+}
+/* .liste_des_prestataires {
+  background-color: rgb(150, 28, 63);
+  padding: 4px 15px;
+} */
+.app_mariage {
+  color: #ff4da6;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.view {
+  text-align: end;
+}
+
+.codepopulaire {
+  position: relative;
+  background-color: #b8295e;
+  border-radius: 51%;
+  padding: 3px;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  cursor: grab;
+  text-transform: full-width;
+  left: -11px;
+}
+
+.card-title {
+  font-size: xx-large;
+  text-transform: capitalize;
+}
+.price {
+  text-align: end;
+  font-weight: bolder;
+  font-size: x-large;
+  color: white;
+  /* color: #ff4da6; */
+}
+
+.price p {
+  font-family: "Jomolhari", sans-serif;
+}
+.custom-button {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: #fff;
+  border-color: hwb(333 23% 4%);
+  background-color: hwb(333 23% 4%);
+}
+
+.custom-button:hover {
+  background-color: hwb(335 18% 16%);
+  border-color: hwb(335 18% 16%);
+}
+
+.custom-button:focus,
+.custom-button.focus {
+  box-shadow: 0 0 0 0.2rem rgba(244, 59, 141, 0.5);
+}
+
+.custom-button:active,
+.custom-button.active {
+  background-color: hwb(338 16% 28%);
+  border-color: #85cce0;
+}
+.custom-button a {
+  text-decoration: none;
+  color: white;
+}
+.rbutt {
+  margin: auto;
+  padding: 0 50px;
+}
+
+/* From Uiverse.io by Yaya12085 */
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  padding: 18px 16px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.input::placeholder {
+  color: transparent;
+}
+
+.input:focus::placeholder {
+  color: rgb(131, 128, 128);
+}
+
+.input:focus,
+.input:not(:placeholder-shown) {
+  background-color: #fff;
+  border: 1px solid #ff4da6;
+  width: 290px;
+  cursor: none;
+  padding: 18px 16px 18px 45px;
+}
+
+.icon {
+  position: absolute;
+  left: 0;
+  height: 45px;
+  width: 45px;
+  background-color: #fff;
+  border-radius: 99px;
+  z-index: -1;
+  fill: #ff4da6;
+  border: 1px solid #ff4da6;
+}
+
+.input:focus + .icon,
+.input:not(:placeholder-shown) + .icon {
+  z-index: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.search-container{
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+/* Style personnalisé pour la pagination */
+.custom-pagination .pagination {
+  margin: 20px 0;
+}
+
+.custom-pagination .page-item.active .page-link {
+  background-color: #ff4da6 !important;
+  border-color: #ff4da6 !important;
+  color: white !important;
+}
+
+.custom-pagination .page-link {
+  color: #ff4da6 !important;
+  transition: all 0.3s ease;
+}
+
+.custom-pagination .page-link:hover {
+  background-color: #ff4da6 !important;
+  border-color: #ff4da6 !important;
+  color: white !important;
+}
+
+.custom-pagination .page-item.disabled .page-link {
+  color: #6c757d !important;
+  pointer-events: none;
+  cursor: not-allowed;
+}
