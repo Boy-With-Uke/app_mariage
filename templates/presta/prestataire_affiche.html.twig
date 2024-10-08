@@ -44,6 +44,7 @@
             type="text"
             name="text"
             class="input"
+             id="search-input"
             placeholder="Search something..."
           />
           <svg
@@ -74,8 +75,7 @@
       <div class="liste_des_prestataires">
         <div class="row">
           {% for prestataire in listes_des_prestataires %}
-          <div class="col-md-4" data-id-presta="{{ prestataire.id }}">
-            <div
+          <div class="col-md-4 prestataire-card" data-id-presta="{{ prestataire.id }}">            <div
               class="card card-blur mt-3"
               data-tilt
               data-tilt-glare
@@ -139,6 +139,28 @@
           {% endfor %}
         </div>
       </div>
+
+      <script>
+        // Sélectionner les éléments nécessaires
+        const searchInput = document.getElementById('search-input');
+        const prestataires = document.querySelectorAll('.prestataire-card');
+      
+        // Écouter les entrées dans le champ de recherche
+        searchInput.addEventListener('input', function() {
+          const searchTerm = searchInput.value.toLowerCase(); // Convertir en minuscule pour rendre la recherche insensible à la casse
+      
+          prestataires.forEach(function(prestataire) {
+            const prestataireName = prestataire.querySelector('.card-title').textContent.toLowerCase();
+      
+            // Vérifier si le nom du prestataire contient le texte saisi
+            if (prestataireName.includes(searchTerm)) {
+              prestataire.style.display = ''; // Afficher si correspond
+            } else {
+              prestataire.style.display = 'none'; // Cacher si ne correspond pas
+            }
+          });
+        });
+      </script>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
