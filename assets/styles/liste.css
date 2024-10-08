@@ -1,767 +1,141 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Qwigley&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Qwigley&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/adobe-garamond-pro-2");
+@import url("https://fonts.cdnfonts.com/css/ubuntu");
 
-* {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.tab-content > .tab-pane {
-  display: none;
-}
-.tab-content > .active {
-  display: block;
-}
-
-.row {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
-
-/* menu-collaps-01 */
-.box-mari {
-  position: relative;
-}
-.arrow-icon {
-  position: absolute;
-  cursor: pointer;
-  padding: 15px;
-  top: 0;
-  left: 0;
-}
-.pen-modif {
-  position: absolute;
-  display: none;
-  cursor: pointer;
-  padding: 15px;
-  top: 0;
-  right: 0;
-}
-
-/* menu-collaps-02 */
-.box-about-event {
-  position: relative;
-  border-right: 1px solid #00000015;
-  border-bottom: 1px solid #00000015;
-  border-left: 1px solid #00000015;
-}
-.arrow-icon2 {
-  position: absolute;
-  cursor: pointer;
-  padding: 15px;
-  top: 0;
-  left: 0;
-}
-.pen-modif2 {
-  position: absolute;
-  display: none;
-  cursor: pointer;
-  padding: 15px;
-  top: 0;
-  right: 0;
-}
-
-/* menu-collaps-03 */
-.add-guest {
-  position: relative;
-  border-right: 1px solid #00000015;
-  border-bottom: 1px solid #00000015;
-  border-left: 1px solid #00000015;
-}
-.add-guest a {
-  background-color: #dd8090;
-  color: #fff;
-  padding: 5px 10px;
-}
-.add-guest a:hover {
-  border: 1px solid #dd8090;
-  color: #dd8090;
-  background: transparent;
-  text-decoration: none;
-}
-.arrow-icon3 {
-  position: absolute;
-  cursor: pointer;
-  padding: 15px;
-  top: 0;
-  left: 0;
-}
-.pen-modif3 {
-  position: absolute;
-  display: none;
-  cursor: pointer;
-  padding: 15px;
-  top: 0;
-  right: 0;
-}
-.guest-info {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.rotate {
-  transform: rotate(-90deg);
-}
-.show-pen {
-  display: block;
-}
-
-.add-guest-form input[type="text"] {
-  outline: none;
-  border-top: none;
-  border-bottom: 2px solid #00000049;
-  border-right: none;
-  border-left: none;
-  width: 50%;
-}
-.add-guest-form i {
-  color: #0b98eb;
-}
-.btn-add-guest {
-  cursor: pointer;
-  background: transparent;
-  outline: none;
-  border: 1px solid #0b98eb;
-  padding: 10px 20px;
-  color: #0b98eb;
-}
-
-.btn-add-guest i {
-  padding: 5px;
-}
-.guest-import {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.guest-import .btn-1 {
-  border: 1px solid #01ac01;
-  cursor: pointer;
-  background: transparent;
-  outline: none;
-  padding: 10px 20px;
-  color: #01ac01;
-  width: 300px;
-  margin: 5px;
-}
-.guest-import .btn-2 {
-  border: 1px solid #ee0f46dc;
-  cursor: pointer;
-  background: transparent;
-  outline: none;
-  padding: 10px 20px;
-  color: #ee0f46dc;
-  width: 300px;
-  margin: 5px;
-}
-.guest-import .btn-1 i {
-  padding: 5px;
-}
-.guest-import .btn-2 i {
-  padding: 5px;
-}
-
-/* Budget */
-.budget-amount input[type="text"] {
-  background-color: #8080801e;
-  border: none;
-  outline: none;
-}
-.search {
-  position: relative;
-}
-.search .filter {
-  padding: 5px 25px;
-  outline: none;
-  border: 1px solid #0b98eb;
-  border-radius: 5px;
-  width: 50%;
-}
-.search i.fa {
-  position: absolute;
-  left: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #00000086;
-}
-
-.beauty {
-  position: relative;
-  border-bottom: 1px solid #00000028;
-}
-.beauty h5 {
-  margin-left: 20px;
-  color: #0b98eb;
-}
-.beauty .arrow-budget {
-  position: absolute;
-  cursor: pointer;
-  left: 5px;
-}
-
-.beautyChild01 input[type="text"] {
-  border: none;
-  border-bottom: 2px solid #00000028;
-  outline: none;
-}
-table {
+.content {
   width: 100%;
-}
-table td {
-  padding-bottom: 5px;
-}
-
-/* Prenstataire */
-.add-prest {
-  border: 1px dashed #0b98eb;
-  width: 250px;
-  cursor: pointer;
-  color: #0b98eb;
-}
-.add-prest i {
-  font-size: 35px;
-  color: #0b98eb;
-}
-.card {
-  border: 1px solid black;
-  position: relative;
-  cursor: pointer;
-  border-radius: 5px;
-  padding: 50px 10px;
-  transition: 0.2s ease-in-out;
-}
-/* .card:hover{
-  transform: scale(1.1);
-  box-shadow: 6px 7px 5px -3px #0000003b;
-} */
-.card-1 {
-  color: #fff;
-  background-image: url(assets/pictures/sakafo01.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.card-2 {
-  color: #fff;
-  background-image: url(assets/pictures/sakafo02.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.card-3 {
-  color: #fff;
-  background-image: url(assets/pictures/sakafo03.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.card-4 {
-  color: #fff;
-  background-image: url(assets/pictures/sakafo01.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.card-1 img {
-  width: 30px;
-}
-.card-1 .ellipsis {
-  position: absolute;
-  cursor: pointer;
-  top: 10px;
-  right: 5px;
-}
-.show-prest {
-  position: absolute;
-  width: 200px;
-  padding: 5px 0px;
-  background-color: #0b98eb;
-  cursor: pointer;
-  color: #fff;
-  display: none;
-  top: 4%;
-  right: 12%;
-}
-.show-prest i {
-  margin-right: 5px;
-}
-
-/* modal */
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-  /* background-color: rgb(0 0 0 / 12%); */
-}
-
-.modal-bloc {
-  position: relative;
-  margin: 5% auto;
-  padding: 20px;
-  width: 65%;
-}
-.modal-bloc span {
-  position: absolute;
-  top: 0%;
-  padding-bottom: 20px;
-  right: 1.8%;
-  float: right;
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 1;
-  color: #fff;
-  text-shadow: 0 1px 0 #fff;
-  opacity: 0.5;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-.head-prest {
-  position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 500px;
-}
-.about-prest {
-  position: absolute;
-  bottom: 5%;
-  left: 5%;
-  color: #fff;
-}
-.scrollBar {
   height: 100vh;
-  overflow: auto;
-}
-.bg-modal {
-  background: #fff;
-  box-shadow: 0px 0px 133px 8px rgba(117, 116, 117, 1);
-}
-.btnBloc button {
-  padding: 8px 18px;
-  border: none;
-  color: #fff;
-  outline: none;
-  cursor: pointer;
-}
-.btnBloc button:focus,
-button:active {
-  outline: none;
-}
-.btnBloc .btn01 {
-  background-color: #0b98eb;
-}
-.btnBloc .btn02 {
-  background-color: #dd8090;
-}
-.btnBloc i {
-  color: #0b98eb;
-  margin-right: 5px;
+  padding: 90px 500px;
 }
 
-.btn-add-guestH {
-  cursor: pointer;
-  background: transparent;
-  outline: none;
-  border: 1px solid #0b98eb;
-  padding: 10px 20px;
-  color: #0b98eb;
-}
-.btn-add-guestF {
-  cursor: pointer;
-  background: transparent;
-  outline: none;
-  border: 1px solid #0b98eb;
-  padding: 10px 20px;
-  color: #0b98eb;
-}
-.btn-add-guestH:focus {
-  outline: none;
-}
-.btn-add-guestF:focus {
-  outline: none;
-}
-
-.selectBlocH {
-  position: absolute;
-  width: 200px;
-  padding: 10px;
-  display: none;
-  right: 29%;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.397);
-  cursor: pointer;
-  z-index: 1;
-}
-.selectBlocF {
-  cursor: pointer;
-  position: absolute;
-  width: 200px;
-  padding: 10px;
-  display: none;
-  right: 34%;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.397);
-  cursor: pointer;
-  z-index: 1;
-}
-
-#valide {
-  display: inline-block;
-}
-
-#newinput_garcon_dhonneur {
-  margin-top: 10px;
-}
-
-.app_mariage_modif {
-  display: inline-block;
-}
-
-* {
-  margin: 0;
-  padding: 0;
+.main {
+  background-color: white;
+  box-shadow: 15px 15px 30px rgba(244, 59, 141, 0.3),
+    8px 8px 15px rgba(244, 59, 141, 0.2);
+  border-radius: 15px;
 }
 body {
-  font-family: verdana;
+  background: url("/img/bg_presta.jpg") center center/cover fixed no-repeat;
 }
-.popup {
+#presta-img {
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  z-index: 1;
-  .popup__content {
-    width: 80%;
-    overflow: auto;
-    padding: 50px;
-    background: white;
-    color: black;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    .close {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      width: 20px;
-      display: block;
-      span {
-        cursor: pointer;
-        position: fixed;
-        width: 22px;
-        height: 24px;
-        background-color: #000;
-        border-radius: 50%;
-        color: #fff;
-        &:nth-child(1) {
-          transform: rotate(45deg);
-        }
-        &:nth-child(2) {
-          transform: rotate(135deg);
-        }
-      }
-    }
-  }
-}
-button {
-  background: #099ccc;
-  color: white;
-  margin: 30px;
-  padding: 5px 30px;
-  cursor: pointer;
-  border: none;
-}
-
-.app_budget {
-  background-color: cornsilk;
-  box-shadow: black;
-  box-sizing: unset;
-  border-radius: 5px;
-}
-
-.card.mt-3.col-md-3 {
-  margin-left: 1rem;
-}
-
-.sign_retour {
-  font-size: 64px;
-  position: absolute;
-  left: 21%;
-  color: red;
-  text-align: center;
-  padding: 7px;
-  z-index: 1;
-  margin-top: -34px;
-}
-
-.navbar_app {
-  width: 100%;
-  box-shadow: 0 2px 4px hsla(330, 90%, 65%, 0.7);
-  z-index: 10000;
-  position: fixed !important;
-  background-color: white !important;
-  height: 100px;
-}
-
-._app_mariage {
-  border-radius: 20px;
-  font-size: 21px !important;
-  color: #f65a9f !important;
-  text-align: center !important;
-  text-transform: lowercase !important;
-  margin-left: 15px !important;
-}
-.hf_app_mariage{
-  color: #f65a9f !important;
-  text-transform: capitalize !important;
-  font-family: "Grey Qo", cursive;
-  font-size: 80px !important;
-}
-
-.nav-menu span {
-  cursor: pointer;
-  margin-top: 10px;
-  margin-left: 5px;
-}
-
-#intro-example {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-
-  object-fit: cover;
-  height: 100vh !important;
-}
-
-.jrs-j {
-  color: #e30071 !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 150px !important;
-}
-
-.styledName {
-  font-family: "Dancing Script";
-}
-
-.nameDiv {
-  margin-top: 50px !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.titre_app_nom {
-  height: auto !important;
-  width: auto !important;
   height: auto;
-  margin: auto;
-  padding: 5% 5%;
-  background-color: rgb(246, 90, 159, 0.5);
-  border-radius: 10px;
-  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
+
+.bottom-left {
+  padding: 15px;
+}
+
+span {
+  color: black !important;
+}
+#title {
+  font-size: 64px;
+  font-family: "Adobe Garamond Pro", sans-serif;
+
   text-transform: capitalize;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.titre_app_nom .styledName {
-  font-size: 100px; /* Change this value to adjust the font size */
+#description {
+  font-family: "Ubuntu", sans-serif;
 }
 
-.text-header {
-  position: relative;
-  font-family: "Lora";
-}
-._app_mariage.app_mariage_nom {
-  color: #f65a9f !important;
-  text-transform: capitalize !important;
-  font-family: "Grey Qo", cursive;
-  font-size: 80px !important;
-  margin-top: -15px;
-}
-
-.presta-button {
-  margin: 0px 20px;
-  padding: 13px 10px;
-}
-
-._app_mariage.repondre_app_mariage {
-  margin-right: 15px;
-}
-
-._app_mariage.icons_svg_app_mariage {
-  border: transparent !important;
-}
-
-.connexion_app_mariage {
-  font-size: 17px !important;
-  display: contents !important;
-}
-
-.icons_svg_app_mariage:hover {
-  background-color: transparent !important;
-}
-
-.app_mariage_wh {
+.custom-button {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   color: #fff !important;
-  position: relative !important;
-  width: calc(100% - 1em) !important;
-  height: calc(100%-1em) !important;
-}
-
-.lieux_de_ceremonie_app {
-  border-color: crimson !important;
-  border-radius: 50px !important;
-  border: 2px solid;
-  height: 50% !important;
-  text-align: center;
-  width: calc(100% - 44em);
-  background-color: #fff !important;
-  color: blue !important;
-}
-
-.week-app-mariage {
-  background-color: white;
-  color: #e30071;
-
-}
-
-.week-date {
-  text-align: center;
-  padding: 10%;
-}
-.app-alliance {
-  padding: 7%;
-  text-align: center;
-}
-
-.week_comment {
-  padding: 10%;
-  font-size: 22px !important;
-  text-align: center;
-}
-.l_titre {
-  font-size: 14px;
-  text-align: match-parent;
-}
-
-.ceremonie-lieu {
-  position: relative;
-  top: -50px;
-  text-align: center;
-}
-
-.img_svg_image {
-  height: 50px;
-}
-.app_active_settings {
-  text-align: end;
-  margin-right: 244px;
-}
-
-.app_active_settings_items {
-  background-color: rgb(245, 89, 159, 0.5) !important;
-}
-.link_app {
-  color: white !important;
-  font-size: 16px;
-  text-transform: initial;
-  font-family: inherit;
-}
-.settings {
-  background-color: blue;
-  position: absolute !important;
-  right: 150px;
-  top: 76px;
-}
-
-.link_app:hover {
-  color: #ffffff !important;
+  border-color: hwb(333 23% 4%);
+  background-color: hwb(333 23% 4%);
   text-decoration: none;
-  background-color: #e30071 !important;
-}
-
-.footer_wedding {
-  background-color: white;
-  color: #000;
-  position: inherit;
-  height: 300px;
-  padding-top: 5%;
-  line-height: 10px;
-  box-shadow: 0px -5px 10px 0px rgba(255, 0, 128, 0.5);
-}
-
-.mariage_hf {
   text-transform: uppercase;
-  font-size: 100px;
-  font-family: initial;
-  text-shadow: 2px 2px #15ffff, -4px 0px aqua;
 }
 
-.ul_menu_app {
-  line-height: normal;
+.custom-button:hover {
+  background-color: hwb(335 18% 16%);
+  border-color: hwb(335 18% 16%);
 }
 
-.ancre_app_menu {
-  color: #000 !important;
+.custom-button:focus,
+.custom-button.focus {
+  box-shadow: 0 0 0 0.2rem rgba(244, 59, 141, 0.5);
+}
+
+.custom-button:active,
+.custom-button.active {
+  background-color: hwb(338 16% 28%);
+  border-color: #85cce0;
+}
+.custom-button a {
   text-decoration: none;
-  list-style: circle;
+  color: white;
 }
-.prestataire_mariage_app {
-  background-color: white;
+
+.container-fluid {
+  padding: 0 20px;
+}
+
+.main {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
   padding: 10px;
 }
 
-.liste_prestataire_plus_suivre {
-  color: white;
-  text-align: center;
-  background-color: #c47799;
-  border-radius: 4px;
+.service-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
 }
-.card_app_mariage {
-  padding: 0px;
-  border-radius: 2px !important;
-  border: 0px;
+
+.service-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
-.price_h1 {
-  color: #ac5e23;
+
+.service-type span {
+  font-size: 14px;
+  color: #333;
 }
-.btn_commande_app {
-  background-color: #ac5e23 !important;
-  border: 2px solid #ac5e23 !important;
+
+.service-price span {
+  color: #ff4081;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
 }
-.btn_commande_app:hover {
-  background-color: #ac5e23 !important;
-  border: 2px solid #ac5e23 !important;
+
+.service-price small {
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main {
+    width: 100%;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
