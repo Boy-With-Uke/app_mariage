@@ -136,7 +136,12 @@ fournisseur %}
         method: "PUT",
         data: data,
         success: function (response) {
-          alert("Ajout panier effectué...");
+          Swal.fire({
+            icon: "success",
+            title: "Ajout au panier effectué succès !",
+            showConfirmButton: false,
+            timer: 1700,
+          });
         },
       });
     }
